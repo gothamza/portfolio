@@ -1,4 +1,9 @@
 // ==========================================
+// ENSURE DOM IS FULLY LOADED BEFORE RUNNING
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+
+// ==========================================
 // LANGUAGE SWITCHER
 // ==========================================
 const translations = {
@@ -77,38 +82,36 @@ const translations = {
 };
 
 // Language Switcher
-document.addEventListener('DOMContentLoaded', function() {
-    const langButtons = document.querySelectorAll('.lang-btn');
-    let currentLang = 'fr';
+const langButtons = document.querySelectorAll('.lang-btn');
+let currentLang = 'fr';
 
-    langButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
-            if (lang !== currentLang) {
-                switchLanguage(lang);
-                currentLang = lang;
-                
-                // Update active button
-                langButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
+langButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        if (lang !== currentLang) {
+            switchLanguage(lang);
+            currentLang = lang;
+            
+            // Update active button
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        }
+    });
+});
+
+function switchLanguage(lang) {
+    // Update all elements with data-fr and data-en attributes
+    document.querySelectorAll('[data-fr][data-en]').forEach(element => {
+        if (lang === 'fr') {
+            element.textContent = element.getAttribute('data-fr');
+        } else {
+            element.textContent = element.getAttribute('data-en');
+        }
     });
 
-    function switchLanguage(lang) {
-        // Update all elements with data-fr and data-en attributes
-        document.querySelectorAll('[data-fr][data-en]').forEach(element => {
-            if (lang === 'fr') {
-                element.textContent = element.getAttribute('data-fr');
-            } else {
-                element.textContent = element.getAttribute('data-en');
-            }
-        });
-
-        // Update page language attribute
-        document.documentElement.lang = lang;
-    }
-});
+    // Update page language attribute
+    document.documentElement.lang = lang;
+}
 
 // ==========================================
 // MOBILE MENU TOGGLE
@@ -491,4 +494,6 @@ document.querySelectorAll('.activity-card').forEach(card => {
 console.log('%c👋 Bonjour! Hello!', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%cCe portfolio a été conçu par Hamza Bouktitiya', 'font-size: 14px; color: #94a3b8;');
 console.log('%cThis portfolio was designed by Hamza Bouktitiya', 'font-size: 14px; color: #94a3b8;');
+
+}); // End of DOMContentLoaded
 
