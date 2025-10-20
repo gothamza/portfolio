@@ -739,16 +739,21 @@ body {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 450px; /* Minimum height for consistency */
 }
 
 .experience-card::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 20px;
+    bottom: 20px;
     left: 0;
     width: 5px;
-    height: 100%;
+    height: auto;
     background: var(--gradient-primary);
+    border-radius: 0 4px 4px 0;
 }
 
 .experience-card:hover {
@@ -784,9 +789,38 @@ body {
     font-weight: 500;
 }
 
+/* Scrollable details container with LEFT scrollbar */
 .experience-details {
     list-style: none;
     margin-bottom: 20px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 250px; /* Set maximum height to enable scrolling */
+    padding-left: 15px; /* Space for scrollbar on left */
+    direction: rtl; /* Reverse direction for left scrollbar */
+    /* Custom scrollbar for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) rgba(255, 255, 255, 0.1);
+}
+
+/* Webkit scrollbar on LEFT */
+.experience-details::-webkit-scrollbar {
+    width: 6px;
+}
+
+.experience-details::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.experience-details::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.experience-details::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }
 
 .experience-details li {
@@ -795,6 +829,7 @@ body {
     position: relative;
     margin-bottom: 12px;
     line-height: 1.6;
+    direction: ltr; /* Reset text direction to normal */
 }
 
 .experience-details li::before {
@@ -805,11 +840,26 @@ body {
     font-size: 1.2rem;
 }
 
+/* Section headers within experience details */
+.experience-details li strong {
+    color: var(--light-text);
+    font-size: 1.05rem;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Hide bullet for header items */
+.experience-details li:has(strong:only-child)::before {
+    content: '';
+}
+
 .experience-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 20px;
+    flex-shrink: 0; /* Don't shrink */
+    margin-top: auto; /* Push to bottom if space available */
 }
 
 .tech-tag {
