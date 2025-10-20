@@ -419,6 +419,62 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 });
 
 // ==========================================
+// TYPING ANIMATION FOR NAME
+// ==========================================
+(function() {
+    const typingElement = document.querySelector('.typing-animation');
+    if (!typingElement) return;
+    
+    const text = typingElement.textContent;
+    typingElement.textContent = '';
+    typingElement.style.borderRight = '4px solid var(--primary-color)';
+    
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+    
+    function type() {
+        if (isPaused) return;
+        
+        if (!isDeleting && charIndex < text.length) {
+            // Typing forward
+            typingElement.textContent = text.substring(0, charIndex + 1);
+            charIndex++;
+            setTimeout(type, 150); // Speed of typing
+        } else if (charIndex === text.length && !isDeleting) {
+            // Finished typing, pause for 5 seconds
+            isPaused = true;
+            setTimeout(() => {
+                isDeleting = true;
+                isPaused = false;
+                type();
+            }, 5000); // Pause for 5 seconds
+        } else if (isDeleting && charIndex > 0) {
+            // Deleting backward
+            charIndex--;
+            typingElement.textContent = text.substring(0, charIndex);
+            setTimeout(type, 100); // Speed of deleting (faster)
+        } else {
+            // Finished deleting, start over
+            isDeleting = false;
+            setTimeout(type, 500); // Brief pause before restarting
+        }
+    }
+    
+    // Start typing after a brief delay
+    setTimeout(type, 1000);
+    
+    // Add blinking cursor animation
+    setInterval(() => {
+        if (typingElement.style.borderRightColor === 'transparent') {
+            typingElement.style.borderRightColor = '#6366f1';
+        } else {
+            typingElement.style.borderRightColor = 'transparent';
+        }
+    }, 500);
+})();
+
+// ==========================================
 // EDUCATION SLIDESHOW WITH SMOOTH SLIDING
 // ==========================================
 (function() {

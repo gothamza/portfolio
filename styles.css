@@ -274,6 +274,23 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-family: 'Playfair Display', serif;
+    position: relative;
+    display: inline-block;
+}
+
+/* Typing Animation */
+.typing-animation {
+    white-space: nowrap;
+    border-right: 4px solid var(--primary-color);
+    padding-right: 5px;
+    display: inline-block;
+    /* Enhanced visibility - use solid gradient colors */
+    background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Add text shadow for better visibility */
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
 }
 
 .hero-subtitle {
