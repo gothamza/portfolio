@@ -161,6 +161,13 @@
 
     <!-- Education Section -->
     <section id="education" class="education section">
+        <div class="education-slideshow">
+            <div class="education-slide active" style="background-image: url('master-image.jpeg')"></div>
+            <div class="education-slide" style="background-image: url('master-image2.jpeg')"></div>
+            <div class="education-slide" style="background-image: url('master-image3.jpeg')"></div>
+            <div class="education-slide" style="background-image: url('master-image4.jpeg')"></div>
+        </div>
+        <div class="education-overlay"></div>
         <div class="container">
             <h2 class="section-title" data-fr="Éducation" data-en="Education">Éducation</h2>
             <div class="timeline">
@@ -485,52 +492,87 @@
         <div class="container">
             <h2 class="section-title" data-fr="Activités Parascolaires" data-en="Extracurricular Activities">Activités Parascolaires</h2>
             <div class="activities-grid">
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-trophy"></i>
+                <!-- Hackathon ThinkAI -->
+                <div class="activity-card" data-event="thinkai">
+                    <div class="activity-image-container">
+                        <img src="Hackathon ThinkAI.jpg" class="activity-image active" alt="Hackathon ThinkAI">
+                        <img src="Hackathon ThinkAI2.jpeg" class="activity-image" alt="Hackathon ThinkAI 2">
+                        <div class="activity-image-overlay"></div>
                     </div>
-                    <h3>Hackathon ThinkAI</h3>
-                    <p data-fr="Organisé à l'école de codage 1337 de l'UM6P" data-en="Organized at UM6P's 1337 coding school">
-                        Organisé à l'école de codage 1337 de l'UM6P
-                    </p>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Hackathon ThinkAI</h3>
+                        <p data-fr="Organisé à l'école de codage 1337 de l'UM6P" data-en="Organized at UM6P's 1337 coding school">
+                            Organisé à l'école de codage 1337 de l'UM6P
+                        </p>
+                    </div>
                 </div>
 
-                <div class="activity-card highlight">
-                    <div class="activity-icon">
-                        <i class="fas fa-medal"></i>
+                <!-- Hackathon DyslexAI -->
+                <div class="activity-card highlight" data-event="dyslexai">
+                    <div class="activity-image-container">
+                        <img src="Hackathon DyslexAI.jpeg" class="activity-image active" alt="Hackathon DyslexAI">
+                        <img src="Hackathon DyslexAI2.jpeg" class="activity-image" alt="Hackathon DyslexAI 2">
+                        <div class="activity-image-overlay"></div>
                     </div>
-                    <h3>Hackathon DyslexAI</h3>
-                    <p data-fr="Université Al Akhawayn, Ifrane - TOP 3" data-en="Al Akhawayn University, Ifrane - TOP 3">
-                        Université Al Akhawayn, Ifrane - TOP 3
-                    </p>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Hackathon DyslexAI</h3>
+                        <p data-fr="Université Al Akhawayn, Ifrane - TOP 3" data-en="Al Akhawayn University, Ifrane - TOP 3">
+                            Université Al Akhawayn, Ifrane - TOP 3
+                        </p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-users"></i>
+                <!-- Club Pragnomos -->
+                <div class="activity-card" data-event="club">
+                    <div class="activity-image-container">
+                        <img src="clube1.jpeg" class="activity-image active" alt="Club Pragnomos">
+                        <img src="clube presnetation.jpeg" class="activity-image" alt="Club Presentation">
+                        <div class="activity-image-overlay"></div>
                     </div>
-                    <h3 data-fr="Co-fondateur du club Pragnomos" data-en="Co-founder of Pragnomos Club">Co-fondateur du club Pragnomos</h3>
-                    <p data-fr="Club étudiant dédié à l'IA et à la technologie" data-en="Student club dedicated to AI and technology">
-                        Club étudiant dédié à l'IA et à la technologie
-                    </p>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-fr="Co-fondateur du club Pragnomos" data-en="Co-founder of Pragnomos Club">Co-fondateur du club Pragnomos</h3>
+                        <p data-fr="Club étudiant dédié à l'IA et à la technologie" data-en="Student club dedicated to AI and technology">
+                            Club étudiant dédié à l'IA et à la technologie
+                        </p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-microphone"></i>
+                <!-- Agora Presentation -->
+                <div class="activity-card" data-event="agora">
+                    <div class="activity-image-container">
+                        <img src="clube presnetation.jpeg" class="activity-image active" alt="Agora Presentation">
+                        <img src="clube1.jpeg" class="activity-image" alt="Prognomos Club">
+                        <div class="activity-image-overlay"></div>
                     </div>
-                    <h3 data-fr="Présentation publique - Événement Agora" data-en="Public Presentation - Agora Event">Présentation publique - Événement Agora</h3>
-                    <p data-fr="Organisé par le club Prognomos" data-en="Organized by Prognomos club">
-                        Organisé par le club Prognomos
-                    </p>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3 data-fr="Présentation publique - Événement Agora" data-en="Public Presentation - Agora Event">Présentation publique - Événement Agora</h3>
+                        <p data-fr="Organisé par le club Prognomos" data-en="Organized by Prognomos club">
+                            Organisé par le club Prognomos
+                        </p>
+                    </div>
                 </div>
 
-                <div class="activity-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-basketball-ball"></i>
+                <!-- Sports -->
+                <div class="activity-card" data-event="sports">
+                    <div class="activity-content no-image">
+                        <div class="activity-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h3>Sports</h3>
+                        <p>Basketball / Karaté</p>
                     </div>
-                    <h3>Sports</h3>
-                    <p>Basketball / Karaté</p>
                 </div>
             </div>
         </div>

@@ -416,6 +416,76 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 });
 
 // ==========================================
+// EDUCATION SLIDESHOW WITH SMOOTH SLIDING
+// ==========================================
+(function() {
+    const slides = document.querySelectorAll('.education-slide');
+    if (slides.length === 0) return;
+    
+    let currentSlide = 0;
+    
+    function nextSlide() {
+        // Mark current slide as previous (slides out to left)
+        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.add('prev');
+        
+        // Move to next slide
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Reset the previous slide after transition
+        setTimeout(() => {
+            slides.forEach((slide, index) => {
+                if (index !== currentSlide) {
+                    slide.classList.remove('prev');
+                }
+            });
+        }, 1500);
+        
+        // Activate next slide (slides in from right)
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // Change slide every 5 seconds
+    setInterval(nextSlide, 5000);
+})();
+
+// ==========================================
+// ACTIVITY CARDS IMAGE CYCLING
+// ==========================================
+document.querySelectorAll('.activity-card').forEach(card => {
+    const images = card.querySelectorAll('.activity-image');
+    
+    if (images.length === 0) return; // Skip if no images
+    
+    let currentIndex = 0;
+    let interval;
+
+    // Start cycling through images on hover
+    card.addEventListener('mouseenter', () => {
+        interval = setInterval(() => {
+            // Remove active class from current image
+            images[currentIndex].classList.remove('active');
+            
+            // Move to next image
+            currentIndex = (currentIndex + 1) % images.length;
+            
+            // Add active class to new image
+            images[currentIndex].classList.add('active');
+        }, 2000); // Change image every 2 seconds
+    });
+
+    // Stop cycling and reset to first image on mouse leave
+    card.addEventListener('mouseleave', () => {
+        clearInterval(interval);
+        
+        // Reset to first image
+        images[currentIndex].classList.remove('active');
+        currentIndex = 0;
+        images[currentIndex].classList.add('active');
+    });
+});
+
+// ==========================================
 // CONSOLE MESSAGE
 // ==========================================
 console.log('%c👋 Bonjour! Hello!', 'font-size: 20px; font-weight: bold; color: #6366f1;');

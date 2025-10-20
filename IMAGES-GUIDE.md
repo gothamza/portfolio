@@ -45,6 +45,32 @@ Votre portfolio nécessite **5 images** pour être complet :
 2. **Placez-les dans le dossier racine** du projet (même niveau que index.html)
 3. **Vérifiez les noms** : ils doivent correspondre exactement (sensible à la casse)
 
+### Comment Ajouter Plus d'Images de Diplôme (Slideshow)
+
+Pour créer un diaporama automatique dans la section Éducation :
+
+1. **Ajoutez vos images** avec les noms : `master-image.jpeg`, `master-image2.jpeg`, `master-image3.jpeg`
+2. **Ouvrez `styles.css`** et cherchez `@keyframes educationSlideshow`
+3. **Décommentez les sections** pour chaque image additionnelle :
+
+```css
+@keyframes educationSlideshow {
+    0%, 100% { 
+        background-image: url('master-image.jpeg');
+    }
+    /* Décommentez si vous avez master-image2.jpeg : */
+    33% { 
+        background-image: url('master-image2.jpeg');
+    }
+    /* Décommentez si vous avez master-image3.jpeg : */
+    66% { 
+        background-image: url('master-image3.jpeg');
+    }
+}
+```
+
+Le diaporama changera automatiquement toutes les 6-7 secondes!
+
 ### Optimiser vos Images
 
 Pour de meilleures performances web :
@@ -141,6 +167,9 @@ portfolio/
 ├── .gitignore
 │
 ├── profile-photo.jpg          ← Votre photo / Your photo
+├── master-image.jpeg          ← Education background (required)
+├── master-image2.jpeg         ← Education slideshow (optional)
+├── master-image3.jpeg         ← Education slideshow (optional)
 ├── project-dyslexai.jpg       ← Projet 1 / Project 1
 ├── project-chatbot.jpg        ← Projet 2 / Project 2
 ├── project-plate-recognition.jpg ← Projet 3 / Project 3
@@ -150,6 +179,9 @@ portfolio/
 ## ✅ Checklist
 
 - [ ] profile-photo.jpg ajouté
+- [ ] master-image.jpeg ajouté (Education background)
+- [ ] master-image2.jpeg ajouté (optional - slideshow)
+- [ ] master-image3.jpeg ajouté (optional - slideshow)
 - [ ] project-dyslexai.jpg ajouté
 - [ ] project-chatbot.jpg ajouté
 - [ ] project-plate-recognition.jpg ajouté
