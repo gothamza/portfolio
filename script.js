@@ -448,7 +448,7 @@ scrollTopBtn.addEventListener('mouseleave', () => {
                 isDeleting = true;
                 isPaused = false;
                 type();
-            }, 5000); // Pause for 5 seconds
+            }, 3000); // Pause for 5 seconds
         } else if (isDeleting && charIndex > 0) {
             // Deleting backward
             charIndex--;
