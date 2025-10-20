@@ -936,12 +936,13 @@ body {
 .project-card::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: 20px;
+    bottom: 20px;
     left: 0;
     width: 4px;
-    height: 100%;
+    height: auto;
     background: var(--gradient-primary);
-    border-radius: 20px 0 0 20px;
+    border-radius: 0 4px 4px 0;
     opacity: 0;
     transition: var(--transition);
 }
