@@ -457,25 +457,21 @@ scrollTopBtn.addEventListener('mouseleave', () => {
             currentPhraseIndex = 0;
             currentWordIndex = 0;
             rotatingTextElement.textContent = '';
-            typeNextWord();
+            typeNextChar();
         });
     });
     
-    function typeNextWord() {
+    function typeNextChar() {
         const phrases = currentLang === 'fr' ? phrasesFR : phrasesEN;
         const currentPhrase = phrases[currentPhraseIndex];
-        const words = currentPhrase.split(' ');
         
-        if (currentWordIndex < words.length) {
-            // Add next word
-            if (currentWordIndex > 0) {
-                rotatingTextElement.textContent += ' ';
-            }
-            rotatingTextElement.textContent += words[currentWordIndex];
+        if (currentWordIndex < currentPhrase.length) {
+            // Add next character
+            rotatingTextElement.textContent += currentPhrase[currentWordIndex];
             currentWordIndex++;
             
-            // Continue typing words
-            setTimeout(typeNextWord, 250); // 250ms between words (slower)
+            // Continue typing characters
+            setTimeout(typeNextChar, 80); // 80ms between characters
         } else {
             // Finished typing current phrase, pause then start next
             setTimeout(() => {
@@ -483,13 +479,13 @@ scrollTopBtn.addEventListener('mouseleave', () => {
                 currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
                 currentWordIndex = 0;
                 rotatingTextElement.textContent = '';
-                typeNextWord();
+                typeNextChar();
             }, 4000); // 4 second pause before next phrase
         }
     }
     
     // Start typing after a delay
-    setTimeout(typeNextWord, 1500);
+    setTimeout(typeNextChar, 1500);
 })();
 
 // ==========================================
