@@ -475,7 +475,7 @@ scrollTopBtn.addEventListener('mouseleave', () => {
             currentWordIndex++;
             
             // Continue typing words
-            setTimeout(typeNextWord, 150); // 150ms between words
+            setTimeout(typeNextWord, 250); // 250ms between words (slower)
         } else {
             // Finished typing current phrase, pause then start next
             setTimeout(() => {
@@ -484,7 +484,7 @@ scrollTopBtn.addEventListener('mouseleave', () => {
                 currentWordIndex = 0;
                 rotatingTextElement.textContent = '';
                 typeNextWord();
-            }, 3000); // 3 second pause before next phrase
+            }, 4000); // 4 second pause before next phrase
         }
     }
     
