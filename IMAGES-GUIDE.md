@@ -166,14 +166,17 @@ portfolio/
 ├── IMAGES-GUIDE.md
 ├── .gitignore
 │
-├── profile-photo.jpg          ← Votre photo / Your photo
-├── master-image.jpeg          ← Education background (required)
-├── master-image2.jpeg         ← Education slideshow (optional)
-├── master-image3.jpeg         ← Education slideshow (optional)
-├── project-dyslexai.jpg       ← Projet 1 / Project 1
-├── project-chatbot.jpg        ← Projet 2 / Project 2
-├── project-plate-recognition.jpg ← Projet 3 / Project 3
-└── project-gym.jpg            ← Projet 4 / Project 4
+└── images/
+    ├── profile-photo.jpg          ← Votre photo / Your photo
+    ├── master-image.jpeg          ← Education background
+    ├── master-image2.jpeg         ← Education slideshow
+    ├── master-image3.jpeg         ← Education slideshow
+    ├── master-image4.jpeg         ← Education slideshow
+    ├── Hackathon ThinkAI.jpg      ← ThinkAI event
+    ├── Hackathon DyslexAI.jpeg    ← DyslexAI event
+    ├── clube1.jpeg                ← Club Pragnomos
+    ├── clube presnetation.jpeg    ← Agora presentation
+    └── SPORTS3.jpg                ← Sports activities
 ```
 
 ## ✅ Checklist

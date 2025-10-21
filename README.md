@@ -23,18 +23,18 @@ portfolio/
 ├── script.js           # JavaScript pour interactions et langue
 ├── README.md           # Documentation
 │
-├── profile-photo.jpg   # Votre photo professionnelle (à ajouter)
-│
-└── Images des projets (à ajouter):
-    ├── project-dyslexai.jpg
-    ├── project-chatbot.jpg
-    ├── project-plate-recognition.jpg
-    └── project-gym.jpg
+└── images/             # Dossier contenant toutes les images
+    ├── profile-photo.jpg
+    ├── master-image.jpeg (1-4)
+    ├── Hackathon ThinkAI.jpg
+    ├── Hackathon DyslexAI.jpeg
+    ├── clube1.jpeg et autres images club
+    └── SPORTS3.jpg
 ```
 
 ## 🖼️ Images à Ajouter
 
-Pour que le portfolio soit complet, vous devez ajouter les images suivantes dans le dossier racine :
+Pour que le portfolio soit complet, vous devez ajouter les images suivantes dans le dossier `images/` :
 
 ### Photo Principale
 - **`profile-photo.jpg`** - Votre photo professionnelle (recommandé : 400x400px minimum)

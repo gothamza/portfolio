@@ -471,7 +471,7 @@ scrollTopBtn.addEventListener('mouseleave', () => {
             currentWordIndex++;
             
             // Continue typing characters
-            setTimeout(typeNextChar, 80); // 80ms between characters
+            setTimeout(typeNextChar, 40); // 80ms between characters
         } else {
             // Finished typing current phrase, pause then start next
             setTimeout(() => {
