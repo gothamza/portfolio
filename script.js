@@ -419,6 +419,80 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 });
 
 // ==========================================
+// ROTATING TEXT WITH WORD-BY-WORD TYPING
+// ==========================================
+(function() {
+    const rotatingTextElement = document.querySelector('.rotating-text-content');
+    if (!rotatingTextElement) return;
+    
+    // Array of phrases in French
+    const phrasesFR = [
+        "Passionné par l'IA et le développement de solutions innovantes",
+        "Développeur de chatbot production-ready pour équipes multiples",
+        "Spécialisé en LangChain, pipelines RAG et orchestration LLM",
+        "Expert en développement full-stack : Next.js, FastAPI, Docker",
+        "Déploiement d'infrastructures IA scalables sur environnements de production",
+        "Transformer la recherche en IA en applications concrètes"
+    ];
+    
+    // Array of phrases in English
+    const phrasesEN = [
+        "Passionate about AI and developing innovative solutions",
+        "Built production-ready chatbot for multi-team collaboration",
+        "Specialized in LangChain, RAG pipelines, and LLM orchestration",
+        "Full-stack AI developer: Next.js, FastAPI, Docker deployment",
+        "Deploying scalable AI infrastructure on production environments",
+        "Turning AI research into real-world applications"
+    ];
+    
+    let currentPhraseIndex = 0;
+    let currentWordIndex = 0;
+    let currentLang = 'fr';
+    
+    // Listen for language changes
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            currentLang = this.getAttribute('data-lang');
+            // Reset animation with new language
+            currentPhraseIndex = 0;
+            currentWordIndex = 0;
+            rotatingTextElement.textContent = '';
+            typeNextWord();
+        });
+    });
+    
+    function typeNextWord() {
+        const phrases = currentLang === 'fr' ? phrasesFR : phrasesEN;
+        const currentPhrase = phrases[currentPhraseIndex];
+        const words = currentPhrase.split(' ');
+        
+        if (currentWordIndex < words.length) {
+            // Add next word
+            if (currentWordIndex > 0) {
+                rotatingTextElement.textContent += ' ';
+            }
+            rotatingTextElement.textContent += words[currentWordIndex];
+            currentWordIndex++;
+            
+            // Continue typing words
+            setTimeout(typeNextWord, 150); // 150ms between words
+        } else {
+            // Finished typing current phrase, pause then start next
+            setTimeout(() => {
+                // Move to next phrase
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                currentWordIndex = 0;
+                rotatingTextElement.textContent = '';
+                typeNextWord();
+            }, 3000); // 3 second pause before next phrase
+        }
+    }
+    
+    // Start typing after a delay
+    setTimeout(typeNextWord, 1500);
+})();
+
+// ==========================================
 // TYPING ANIMATION FOR NAME
 // ==========================================
 (function() {
