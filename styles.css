@@ -1078,6 +1078,34 @@ body {
     color: white;
 }
 
+.project-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.demo-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.demo-link:hover {
+    background: #10b981;
+    border-color: #10b981;
+    transform: scale(1.1) rotate(-5deg);
+    color: white;
+}
+
 .project-card h3 {
     font-size: 1.3rem;
     margin-bottom: 12px;
