@@ -817,11 +817,39 @@ body {
     font-size: 0.9rem;
 }
 
+.experience-company-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .experience-company {
     color: var(--gray-text);
     font-size: 1rem;
-    margin-bottom: 20px;
+    margin: 0;
     font-weight: 500;
+}
+
+.experience-demo-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.experience-demo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
 /* Scrollable details container with LEFT scrollbar */

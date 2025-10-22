@@ -112,9 +112,9 @@ function switchLanguage(lang) {
     // Update CV download links based on language
     document.querySelectorAll('.cv-download-btn').forEach(btn => {
         if (lang === 'fr') {
-            btn.setAttribute('href', 'hamza_bouktitiya_cv_fr.pdf');
+            btn.setAttribute('href', 'PDFs/hamza_bouktitiya_cv_fr.pdf');
         } else {
-            btn.setAttribute('href', 'hamza_bouktitiya_cv_en.pdf');
+            btn.setAttribute('href', 'PDFs/hamza_bouktitiya_cv_en.pdf');
         }
     });
 
