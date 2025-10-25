@@ -996,20 +996,24 @@ body {
 
 .floating-icon {
     position: absolute;
-    opacity: 0.15;
+    opacity: 0.25;
     transition: all 0.3s ease;
     animation: floatRandom 15s infinite linear;
 }
 
 .floating-icon img {
-    width: 40px;
-    height: 40px;
-    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+    width: 60px;
+    height: 60px;
+    filter: brightness(1.3) drop-shadow(0 0 15px rgba(99, 102, 241, 0.4));
 }
 
 .floating-icon:hover {
-    opacity: 0.3;
-    transform: scale(1.1);
+    opacity: 0.5;
+    transform: scale(1.2);
+}
+
+.floating-icon:hover img {
+    filter: brightness(1.6) drop-shadow(0 0 20px rgba(99, 102, 241, 0.6));
 }
 
 @keyframes floatRandom {
