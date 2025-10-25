@@ -636,8 +636,8 @@ function initializeFloatingIcons() {
     
     floatingIcons.forEach((icon, index) => {
         // Random initial position
-        const xPos = Math.random() * 90; // 0-90% to keep icons within bounds
-        const yPos = Math.random() * 90; // 0-90% to keep icons within bounds
+        const xPos = Math.random() * 90 +2; // 0-90% to keep icons within bounds
+        const yPos = Math.random() * 90 +2; // 0-90% to keep icons within bounds
         
         icon.style.left = `${xPos}%`;
         icon.style.top = `${yPos}%`;
@@ -647,7 +647,7 @@ function initializeFloatingIcons() {
         icon.style.animationDuration = `${duration}s`;
         
         // Random animation delay (0-5 seconds)
-        const delay = Math.random() * 5;
+        const delay = Math.random() * 2;
         icon.style.animationDelay = `${delay}s`;
         
         // Random animation direction
