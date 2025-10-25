@@ -966,10 +966,68 @@ body {
 /* ==========================================
    SKILLS SECTION
    ========================================== */
+.skills {
+    position: relative;
+    overflow: hidden;
+}
+
+.skills .container {
+    position: relative;
+    z-index: 2;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+}
+
+/* Floating Icons Background */
+.floating-icons-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.floating-icon {
+    position: absolute;
+    opacity: 0.15;
+    transition: all 0.3s ease;
+    animation: floatRandom 15s infinite linear;
+}
+
+.floating-icon img {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+}
+
+.floating-icon:hover {
+    opacity: 0.3;
+    transform: scale(1.1);
+}
+
+@keyframes floatRandom {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px) rotate(90deg);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-15px) rotate(180deg);
+    }
+    75% {
+        transform: translateY(-30px) translateX(5px) rotate(270deg);
+    }
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(360deg);
+    }
 }
 
 .skill-category {

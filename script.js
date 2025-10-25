@@ -630,5 +630,34 @@ console.log('%c👋 Bonjour! Hello!', 'font-size: 20px; font-weight: bold; color
 console.log('%cCe portfolio a été conçu par Hamza Bouktitiya', 'font-size: 14px; color: #94a3b8;');
 console.log('%cThis portfolio was designed by Hamza Bouktitiya', 'font-size: 14px; color: #94a3b8;');
 
+// Floating Icons Animation
+function initializeFloatingIcons() {
+    const floatingIcons = document.querySelectorAll('.floating-icon');
+    
+    floatingIcons.forEach((icon, index) => {
+        // Random initial position
+        const xPos = Math.random() * 90; // 0-90% to keep icons within bounds
+        const yPos = Math.random() * 90; // 0-90% to keep icons within bounds
+        
+        icon.style.left = `${xPos}%`;
+        icon.style.top = `${yPos}%`;
+        
+        // Random animation duration (10-20 seconds)
+        const duration = Math.random() * 10 + 10;
+        icon.style.animationDuration = `${duration}s`;
+        
+        // Random animation delay (0-5 seconds)
+        const delay = Math.random() * 5;
+        icon.style.animationDelay = `${delay}s`;
+        
+        // Random animation direction
+        const direction = Math.random() > 0.5 ? 'normal' : 'reverse';
+        icon.style.animationDirection = direction;
+    });
+}
+
+// Initialize floating icons when DOM is loaded
+initializeFloatingIcons();
+
 }); // End of DOMContentLoaded
 
