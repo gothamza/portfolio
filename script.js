@@ -83,7 +83,7 @@ const translations = {
 
 // Language Switcher
 const langButtons = document.querySelectorAll('.lang-btn');
-let currentLang = 'fr';
+let currentLang = 'en';
 
 langButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -456,7 +456,7 @@ scrollTopBtn.addEventListener('mouseleave', () => {
     
     let currentPhraseIndex = 0;
     let currentWordIndex = 0;
-    let currentLang = 'fr';
+    let currentLang = 'en';
     
     // Listen for language changes
     document.querySelectorAll('.lang-btn').forEach(btn => {
