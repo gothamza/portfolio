@@ -85,6 +85,9 @@ const translations = {
 const langButtons = document.querySelectorAll('.lang-btn');
 let currentLang = 'en';
 
+// Initialize with English content
+switchLanguage('en');
+
 langButtons.forEach(button => {
     button.addEventListener('click', function() {
         const lang = this.getAttribute('data-lang');
