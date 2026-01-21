@@ -1,0 +1,97 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% Colors
+\definecolor{primary}{RGB}{99, 102, 241}
+\definecolor{secondary}{RGB}{139, 92, 246}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\titlerule[0.8pt]]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Force single page - tighter spacing
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{10pt}
+\raggedbottom
+
+% Compact lists
+\setlist[itemize]{leftmargin=*,topsep=0.5pt,itemsep=0.3pt,parsep=0pt}
+
+% Custom commands
+\newcommand{\cvheader}[4]{
+    \begin{center}
+        {\Huge\bfseries #1}\\[0.1em]
+        {\large #2}\\[0.2em]
+        \faPhone\ #3 \quad \faEnvelope\ \href{mailto:#4}{#4}\\[0.1em]
+        \faMapMarker\ Kenitra, Maroc\\[0.1em]
+        \faLinkedin\ \href{https://www.linkedin.com/in/hamza-bouktitiya-604471253/}{LinkedIn} \quad
+        \faGithub\ \href{https://github.com/gothamza}{GitHub} \quad
+        \faGlobe\ \href{https://gothamza.github.io/portfolio/}{Portfolio}
+    \end{center}
+    \vspace{-0.3em}
+}
+
+\newcommand{\cvitem}[2]{\textbf{#1} \hfill \textit{#2}}
+
+\begin{document}
+
+\cvheader{Hamza Bouktitiya}{Ingénieur en Intelligence Artificielle}{+212-688679653}{bouktitiya.hamza.post@gmail.com}
+
+\section*{Formation}
+\begin{itemize}
+    \item \cvitem{Doctorant en Intelligence Artificielle}{2024 -- Présent}\\
+    Université Ibn Tofail, Kenitra, Maroc. Thèse : Description textuelle et classification automatique des séquences vidéos par apprentissage profond. Encadré par : Professeur Housni Khalid
+    \item \cvitem{Master en Intelligence Artificielle et Réalité Virtuelle}{2022 -- 2024}\\
+    Université Ibn Tofail, Kenitra, Maroc
+    \item \cvitem{Licence en Sciences Mathématiques et Informatique}{2018 -- 2022}\\
+    Université Ibn Tofail, Kenitra, Maroc
+    \item \cvitem{Baccalauréat en Sciences Mathématiques}{2017 -- 2018}\\
+    Lycée Sidi Aissa, Souk El Arbaa Du Gharbe
+\end{itemize}
+
+\section*{Expérience Professionnelle}
+\begin{itemize}
+    \item \cvitem{Ingénieur Junior en IA}{Avril 2025 -- Octobre 2025}\\
+    \textbf{OBYSTECH SOLUTIONS, Rabat}\\
+    Développement d'une plateforme d'agent IA unifié pour les départements RH, Finance, Management et IT (projet solo). Front-end : interface multi-chat avec sélecteur de collection, bascule RAG par chat, espaces de travail d'équipe avec partage public/privé, pagination basée sur curseur. Back-end : pipeline RAG avec ingestion (PDF/docs/txt/md), embeddings HF, recherche hybride/vectorielle avec ré-ordonnancement MMR, flux LangGraph avec mémoire PostgreSQL, intégration MCP pour outils externes. Déploiement : stack Docker Compose multi-services, déploiement VPS avec proxy inverse/SSL, redémarrages sans interruption. Technologies : Next.js, React, Tailwind, FastAPI, LangChain, LangGraph, MCP, Ollama, PostgreSQL, ChromaDB, Docker, JWT/OAuth2
+    \item \cvitem{Stagiaire en IA}{Février 2024 -- Août 2024}\\
+    \textbf{Verve Technologie, Casablanca}\\
+    Système de prévision LSTM pour la consommation énergétique. Endpoints de génération d'images avec Stable Diffusion 1.5. Système RAG pour génération de texte depuis Wikipédia et PDF. Authentification JWT et gestion des utilisateurs. Technologies : LSTM, LangChain, FastAPI, Stable Diffusion, JWT
+    \item \cvitem{Stagiaire en Développement Web}{Mars 2022 -- Juin 2022}\\
+    \textbf{Département CS, Université Ibn Tofail, Kenitra}\\
+    Application web pour la gestion d'une salle de sport (clients et administrateurs). Technologies : PHP, JavaScript, Bootstrap, CSS, MySQL
+\end{itemize}
+
+\section*{Compétences Techniques}
+\textbf{IA \& Machine Learning :} PyTorch, PyTorch3D, TensorFlow, LangChain, LangGraph, CrewAI \quad
+\textbf{Back-end :} Django, FastAPI, SQL, MySQL, PostgreSQL, PL/SQL \quad
+\textbf{Front-end \& Design :} HTML, CSS, Bootstrap, Next.js, THREE.JS, LangChain.js \quad
+\textbf{Analyse de Données :} Python, Power BI, Pandas, NumPy
+
+\section*{Projets Personnels}
+\begin{itemize}
+    \item \textbf{Chatbot Odoo} (2024) -- Assistant IA intégré à Odoo ERP permettant des interactions en langage naturel pour gérer les opérations business dans différents modules (CRM, Ventes, Inventaire, RH) en utilisant le NLP pour interpréter les requêtes et exécuter des actions complexes
+    \item \textbf{Jeu Éducatif DyslexAI} (Février 2024) -- Jeu éducatif créé lors du hackathon DyslexAI pour aider les enfants à améliorer leur prononciation et l'apprentissage des mots, développé avec Python et Django
+    \item \textbf{Génération d'Objets 3D} (Février 2024) -- Reconstruction d'objets 3D à partir d'images 2D utilisant des réseaux neuronaux de génération de vues multiples et représentations implicites (NeRF) avec PyTorch
+    \item \textbf{Chatbot de Santé - ThinkAI} (Août 2024) -- Chatbot multimodal développé avec Python, Ollama et Streamlit supportant les entrées texte et image avec fonctionnalité de tampon pour interactions continues
+    \item \textbf{Système de Recommandation de Livres} (2024) -- Système de recommandation utilisant techniques de filtrage collaboratif, traitement TF-IDF et algorithmes de machine learning pour analyser les préférences utilisateurs et suggérer des livres pertinents avec interface Streamlit
+    \item \textbf{Système QA en Darija} (Décembre 2023) -- Système NLP pour questions-réponses bilingue en darija marocain et anglais, entraînement de trois modèles : modèle QA basé Transformers, Seq2Seq pour traduction darija-anglais, LSTM pour traduction anglais-darija
+    \item \textbf{Reconnaissance des Plaques} (Juin 2023) -- Modèle de vision par ordinateur personnalisé pour détection de caractères de plaques, génération de 1 700 caractéristiques HOG par caractère, précision de 98,9\% avec classifieurs KNN et SVM
+\end{itemize}
+
+\section*{Langues \& Activités}
+\textbf{Langues :} Arabe (Maternelle) -- Anglais (C1) -- Français (B2) \quad
+\textbf{Activités :} Hackathon DyslexAI (TOP 3, Université Al Akhawayn) -- Hackathon ThinkAI (École 1337) -- Co-fondateur club Pragnomos -- Présentation ML (Événement Agora)
+
+\end{document}
