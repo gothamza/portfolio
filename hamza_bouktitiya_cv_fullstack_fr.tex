@@ -1,0 +1,101 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% Colors
+\definecolor{primary}{RGB}{99, 102, 241}
+\definecolor{secondary}{RGB}{139, 92, 246}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Force single page - tighter spacing
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{10pt}
+\raggedbottom
+
+% Compact lists
+\setlist[itemize]{leftmargin=*,topsep=0.5pt,itemsep=0.3pt,parsep=0pt}
+
+% Custom commands
+\newcommand{\cvheader}[4]{
+    \begin{center}
+        {\Huge\bfseries #1}\\[0.1em]
+        {\large #2}\\[0.1em]
+        \faPhone\ #3 \quad \faEnvelope\ \href{mailto:#4}{#4}\\[0.1em]
+        \faMapMarker\ Kenitra, Maroc\\[0.1em]
+        \faLinkedin\ \href{https://www.linkedin.com/in/hamza-bouktitiya-604471253/}{LinkedIn} \quad
+        \faGithub\ \href{https://github.com/gothamza}{GitHub} \quad
+        \faGlobe\ \href{https://gothamza.github.io/portfolio/}{Portfolio}
+    \end{center}
+    \vspace{-0.3em}
+}
+
+\newcommand{\cvitem}[2]{\textbf{#1} \hfill \textit{#2}}
+
+\begin{document}
+
+\cvheader{Hamza Bouktitiya}{Développeur Full-Stack}{+212-688679653}{bouktitiya.hamza.post@gmail.com}
+
+\section*{Formation}
+\begin{itemize}
+    \item \cvitem{Doctorant en Intelligence Artificielle}{2024 -- Présent}\\
+    Université Ibn Tofail, Kenitra, Maroc. Thèse : Description textuelle et classification automatique des séquences vidéos par apprentissage profond. Encadré par : Professeur Housni Khalid
+    \item \cvitem{Master en Intelligence Artificielle et Réalité Virtuelle}{2022 -- 2024}\\
+    Université Ibn Tofail, Kenitra, Maroc
+    \item \cvitem{Licence en Sciences Mathématiques et Informatique}{2018 -- 2022}\\
+    Université Ibn Tofail, Kenitra, Maroc
+\end{itemize}
+
+\section*{Expérience Professionnelle}
+\begin{itemize}
+    \item \cvitem{Développeur Full-Stack Junior}{Avril 2025 -- Octobre 2025}\\
+    \textbf{OBYSTECH SOLUTIONS, Rabat}\\
+    Développement complet d'une plateforme web de bout en bout (projet solo). \textbf{Front-end :} Next.js, React, Tailwind CSS - interface multi-chat responsive, gestion d'état, pagination curseur, authentification OAuth2/JWT. \textbf{Back-end :} FastAPI RESTful API, architecture microservices, PostgreSQL avec migrations, conception schéma base de données, endpoints sécurisés. \textbf{DevOps \& CI/CD :} Docker Compose multi-services, déploiement VPS avec Nginx reverse proxy, configuration SSL/HTTPS, pipelines CI/CD, redémarrages zero-downtime, monitoring. \textbf{Intégration :} APIs externes, webhooks, gestion fichiers. Technologies : Next.js, React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker, Nginx, Git, CI/CD
+    \item \cvitem{Stagiaire Développement Full-Stack}{Février 2024 -- Août 2024}\\
+    \textbf{Verve Technologie, Casablanca}\\
+    Développement d'applications web complètes. Back-end FastAPI avec authentification JWT, gestion utilisateurs, endpoints REST. Front-end avec intégration API, gestion état. Déploiement Docker, configuration serveurs. Technologies : FastAPI, Python, JWT, Docker, REST APIs
+    \item \cvitem{Stagiaire Développement Web}{Mars 2022 -- Juin 2022}\\
+    \textbf{Département CS, Université Ibn Tofail, Kenitra}\\
+    Application web complète pour gestion salle de sport : front-end (HTML, CSS, Bootstrap, JavaScript), back-end (PHP), base de données MySQL, authentification, gestion rôles clients/administrateurs. Technologies : PHP, JavaScript, Bootstrap, CSS, MySQL
+\end{itemize}
+
+\section*{Compétences Techniques}
+\textbf{Front-end :} Next.js, React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap, Responsive Design \quad
+\textbf{Back-end :} FastAPI, Django, Python, RESTful APIs, GraphQL, Microservices Architecture \quad
+\textbf{Bases de données :} PostgreSQL, MySQL, SQL, Conception schémas, Migrations, Optimisation requêtes \quad
+\textbf{DevOps \& CI/CD :} Docker, Docker Compose, Nginx, VPS Deployment, SSL/HTTPS, Git, CI/CD Pipelines, Monitoring \quad
+\textbf{Outils :} Git/GitHub, Linux, Bash, API Integration, Webhooks \quad
+\textbf{Plus (IA) :} LangChain, LLMs, PyTorch, Computer Vision, NLP
+
+\section*{Projets Personnels}
+\begin{itemize}
+    \item \textbf{Plateforme Multi-Départements} (2025) -- Application full-stack complète développée seule : front-end Next.js/React avec authentification, back-end FastAPI, PostgreSQL, déploiement Docker avec CI/CD, reverse proxy Nginx. Gestion complète du cycle de vie : conception, développement, tests, déploiement, monitoring
+    \item \textbf{Chatbot Odoo} (2024) -- Intégration full-stack avec Odoo ERP : API backend Python, front-end pour interactions, gestion base de données, déploiement production
+    \item \textbf{Application Gestion Salle de Sport} (2022) -- Application web complète PHP/MySQL : interface admin et client, authentification, gestion réservations, dashboard analytics, déploiement serveur
+    \item \textbf{Jeu Éducatif DyslexAI} (2024) -- Application Django full-stack : modèles données, vues, templates, authentification utilisateurs, déploiement production
+    \item \textbf{Système de Recommandation} (2024) -- Application Streamlit avec backend Python, traitement données, API REST, interface utilisateur interactive
+\end{itemize}
+
+\section*{Capacités Clés}
+\textbf{Développement Solo :} Capacité à concevoir, développer, déployer et maintenir des applications complètes de manière autonome. Expérience en gestion de projets de bout en bout : architecture, développement front-end/back-end, base de données, DevOps, CI/CD \quad
+\textbf{Stack Complet :} Maîtrise de l'ensemble de la stack technique moderne, de l'interface utilisateur au déploiement production \quad
+\textbf{DevOps :} Configuration et gestion d'infrastructures, déploiement automatisé, monitoring, optimisation performances
+
+\section*{Langues \& Activités}
+\textbf{Langues :} Arabe (Maternelle) -- Anglais (C1) -- Français (B2) \quad
+\textbf{Activités :} Hackathon DyslexAI (TOP 3) -- Hackathon ThinkAI -- Co-fondateur club Pragnomos -- Présentation techniques (Événement Agora)
+
+\end{document}
+

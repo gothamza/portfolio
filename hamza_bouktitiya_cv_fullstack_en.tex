@@ -1,0 +1,101 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+
+% Colors
+\definecolor{primary}{RGB}{99, 102, 241}
+\definecolor{secondary}{RGB}{139, 92, 246}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Force single page - tighter spacing
+\setlength{\parskip}{0pt}
+\setlength{\baselineskip}{10pt}
+\raggedbottom
+
+% Compact lists
+\setlist[itemize]{leftmargin=*,topsep=0.5pt,itemsep=0.3pt,parsep=0pt}
+
+% Custom commands
+\newcommand{\cvheader}[4]{
+    \begin{center}
+        {\Huge\bfseries #1}\\[0.1em]
+        {\large #2}\\[0.1em]
+        \faPhone\ #3 \quad \faEnvelope\ \href{mailto:#4}{#4}\\[0.1em]
+        \faMapMarker\ Kenitra, Morocco\\[0.1em]
+        \faLinkedin\ \href{https://www.linkedin.com/in/hamza-bouktitiya-604471253/}{LinkedIn} \quad
+        \faGithub\ \href{https://github.com/gothamza}{GitHub} \quad
+        \faGlobe\ \href{https://gothamza.github.io/portfolio/}{Portfolio}
+    \end{center}
+    \vspace{-0.3em}
+}
+
+\newcommand{\cvitem}[2]{\textbf{#1} \hfill \textit{#2}}
+
+\begin{document}
+
+\cvheader{Hamza Bouktitiya}{Full-Stack Developer}{+212-688679653}{bouktitiya.hamza.post@gmail.com}
+
+\section*{Education}
+\begin{itemize}
+    \item \cvitem{PhD Candidate in Artificial Intelligence}{2024 -- Present}\\
+    Ibn Tofail University, Kenitra, Morocco. Thesis: Textual description and automatic classification of video sequences by deep learning. Supervised by: Professor Housni Khalid
+    \item \cvitem{Master in Artificial Intelligence and Virtual Reality}{2022 -- 2024}\\
+    Ibn Tofail University, Kenitra, Morocco
+    \item \cvitem{Bachelor in Mathematical and Computer Science}{2018 -- 2022}\\
+    Ibn Tofail University, Kenitra, Morocco
+\end{itemize}
+
+\section*{Professional Experience}
+\begin{itemize}
+    \item \cvitem{Junior Full-Stack Developer}{April 2025 -- October 2025}\\
+    \textbf{OBYSTECH SOLUTIONS, Rabat}\\
+    End-to-end development of a complete web platform (solo project). \textbf{Front-end:} Next.js, React, Tailwind CSS - responsive multi-chat interface, state management, cursor-based pagination, OAuth2/JWT authentication. \textbf{Back-end:} FastAPI RESTful API, microservices architecture, PostgreSQL with migrations, database schema design, secured endpoints. \textbf{DevOps \& CI/CD:} Multi-service Docker Compose, VPS deployment with Nginx reverse proxy, SSL/HTTPS configuration, CI/CD pipelines, zero-downtime restarts, monitoring. \textbf{Integration:} External APIs, webhooks, file management. Technologies: Next.js, React, TypeScript, Tailwind, FastAPI, Python, PostgreSQL, Docker, Nginx, Git, CI/CD
+    \item \cvitem{Full-Stack Development Intern}{February 2024 -- August 2024}\\
+    \textbf{Verve Technologie, Casablanca}\\
+    Development of complete web applications. FastAPI backend with JWT authentication, user management, REST endpoints. Front-end with API integration, state management. Docker deployment, server configuration. Technologies: FastAPI, Python, JWT, Docker, REST APIs
+    \item \cvitem{Web Development Intern}{March 2022 -- June 2022}\\
+    \textbf{CS Department, Ibn Tofail University, Kenitra}\\
+    Complete web application for gym management: front-end (HTML, CSS, Bootstrap, JavaScript), back-end (PHP), MySQL database, authentication, client/administrator role management. Technologies: PHP, JavaScript, Bootstrap, CSS, MySQL
+\end{itemize}
+
+\section*{Technical Skills}
+\textbf{Front-end:} Next.js, React, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap, Responsive Design \quad
+\textbf{Back-end:} FastAPI, Django, Python, RESTful APIs, GraphQL, Microservices Architecture \quad
+\textbf{Databases:} PostgreSQL, MySQL, SQL, Schema Design, Migrations, Query Optimization \quad
+\textbf{DevOps \& CI/CD:} Docker, Docker Compose, Nginx, VPS Deployment, SSL/HTTPS, Git, CI/CD Pipelines, Monitoring \quad
+\textbf{Tools:} Git/GitHub, Linux, Bash, API Integration, Webhooks \quad
+\textbf{Plus (AI):} LangChain, LLMs, PyTorch, Computer Vision, NLP
+
+\section*{Personal Projects}
+\begin{itemize}
+    \item \textbf{Multi-Department Platform} (2025) -- Complete full-stack application developed solo: Next.js/React front-end with authentication, FastAPI back-end, PostgreSQL, Docker deployment with CI/CD, Nginx reverse proxy. Full lifecycle management: design, development, testing, deployment, monitoring
+    \item \textbf{Chatbot Odoo} (2024) -- Full-stack integration with Odoo ERP: Python backend API, front-end for interactions, database management, production deployment
+    \item \textbf{Gym Management Application} (2022) -- Complete PHP/MySQL web application: admin and client interfaces, authentication, reservation management, analytics dashboard, server deployment
+    \item \textbf{Educational Game - DyslexAI} (2024) -- Full-stack Django application: data models, views, templates, user authentication, production deployment
+    \item \textbf{Recommendation System} (2024) -- Streamlit application with Python backend, data processing, REST API, interactive user interface
+\end{itemize}
+
+\section*{Key Capabilities}
+\textbf{Solo Development:} Ability to design, develop, deploy and maintain complete applications independently. Experience in end-to-end project management: architecture, front-end/back-end development, database, DevOps, CI/CD \quad
+\textbf{Full Stack:} Mastery of the complete modern technical stack, from user interface to production deployment \quad
+\textbf{DevOps:} Infrastructure setup and management, automated deployment, monitoring, performance optimization
+
+\section*{Languages \& Activities}
+\textbf{Languages:} Arabic (Native) -- English (C1) -- French (B2) \quad
+\textbf{Activities:} DyslexAI Hackathon (TOP 3) -- ThinkAI Hackathon -- Co-founder Pragnomos Club -- Technical Presentation (Agora event)
+
+\end{document}
+
