@@ -1,101 +1,101 @@
 # Portfolio - Hamza Bouktitiya
 
-🌐 **Portfolio Web Professionnel** - Ingénieur en Intelligence Artificielle
+🌐 **Professional Web Portfolio** - Artificial Intelligence Engineer
 
-Ce portfolio présente mon parcours académique, mes expériences professionnelles, mes compétences techniques et mes projets dans le domaine de l'intelligence artificielle et du développement web.
+This portfolio showcases my academic background, professional experiences, technical skills, and projects in the field of artificial intelligence and web development.
 
-## 🎨 Caractéristiques
+## 🎨 Features
 
-- ✅ **Design Moderne & Artistique** - Interface créative avec dégradés et animations
-- 🌍 **Bilingue** - Français/Anglais avec sélecteur de langue
-- 📱 **Responsive** - Optimisé pour tous les appareils (mobile, tablette, desktop)
-- ⚡ **Animations Fluides** - Effets de scroll, transitions et interactions
-- 🎯 **Navigation Intuitive** - Menu sticky avec smooth scroll
-- 🔗 **Liens Directs** - Vers GitHub, LinkedIn et projets
+- ✅ **Modern & Artistic Design** - Creative interface with gradients and animations
+- 🌍 **Bilingual** - French/English with language selector
+- 📱 **Responsive** - Optimized for all devices (mobile, tablet, desktop)
+- ⚡ **Smooth Animations** - Scroll effects, transitions and interactions
+- 🎯 **Intuitive Navigation** - Sticky menu with smooth scrolling
+- 🔗 **Direct Links** - To GitHub, LinkedIn and projects
 
-## 🏠 Aperçu de la Page d'Accueil
+## 🏠 Homepage Preview
 
 ![Home Page Screenshot](images/homescreanshot.jpeg)
 
-## 📂 Structure du Projet
+## 📂 Project Structure
 
 ```
 portfolio/
 │
-├── index.html          # Page principale HTML
-├── styles.css          # Styles CSS avec animations
-├── script.js           # JavaScript pour interactions et langue
+├── index.html          # Main HTML page
+├── styles.css          # CSS styles with animations
+├── script.js           # JavaScript for interactions and language
 ├── README.md           # Documentation
 │
-└── images/             # Dossier contenant toutes les images
+└── images/             # Folder containing all images
     ├── profile-photo.jpg
     ├── master-image.jpeg (1-4)
     ├── Hackathon ThinkAI.jpg
     ├── Hackathon DyslexAI.jpeg
-    ├── clube1.jpeg et autres images club
+    ├── clube1.jpeg and other club images
     └── SPORTS3.jpg
 ```
 
-## 🖼️ Images à Ajouter
+## 🖼️ Images to Add
 
-Pour que le portfolio soit complet, vous devez ajouter les images suivantes dans le dossier `images/` :
+To complete your portfolio, add the following images to the `images/` folder:
 
-### Photo Principale
-- **`profile-photo.jpg`** - Votre photo professionnelle (recommandé : 400x400px minimum)
+### Profile Photo
+- **`profile-photo.jpg`** - Your professional photo (recommended: minimum 400x400px)
 
-### Images des Projets
-- **`project-dyslexai.jpg`** - Screenshot du projet DyslexAI
-- **`project-chatbot.jpg`** - Screenshot du chatbot de santé
-- **`project-plate-recognition.jpg`** - Screenshot de la reconnaissance de plaques
-- **`project-gym.jpg`** - Screenshot de l'application gym
+### Project Images
+- **`project-dyslexai.jpg`** - DyslexAI project screenshot
+- **`project-chatbot.jpg`** - Health chatbot screenshot
+- **`project-plate-recognition.jpg`** - License plate recognition screenshot
+- **`project-gym.jpg`** - Gym application screenshot
 
-### Recommandations pour les Images
-- Format : JPG ou PNG
-- Taille recommandée : 800x600px pour les projets
-- Poids optimisé : < 500KB par image
-- Utilisez des outils comme [TinyPNG](https://tinypng.com/) pour compresser
+### Image Recommendations
+- Format: JPG or PNG
+- Recommended size: 800x600px for projects
+- Optimized weight: < 500KB per image
+- Use tools like [TinyPNG](https://tinypng.com/) to compress
 
-## 🚀 Déploiement sur GitHub Pages
+## 🚀 Deployment on GitHub Pages
 
-### Méthode 1 : Dépôt Personnel (Recommandé)
+### Method 1: Personal Repository (Recommended)
 
-1. **Créer un nouveau dépôt sur GitHub**
-   - Nom du dépôt : `[votre-username].github.io`
-   - Exemple : `gothamza.github.io`
-   - Cochez "Public"
+1. **Create a new repository on GitHub**
+   - Repository name: `[your-username].github.io`
+   - Example: `gothamza.github.io`
+   - Check "Public"
 
-2. **Pousser les fichiers vers GitHub**
+2. **Push files to GitHub**
    ```bash
-   # Si ce n'est pas déjà fait, initialisez git
+   # If not already done, initialize git
    git init
    
-   # Ajoutez tous les fichiers
+   # Add all files
    git add .
    
-   # Faites un commit
+   # Make a commit
    git commit -m "Initial commit - Portfolio website"
    
-   # Ajoutez le dépôt distant
+   # Add remote repository
    git remote add origin https://github.com/gothamza/gothamza.github.io.git
    
-   # Poussez vers GitHub
+   # Push to GitHub
    git branch -M main
    git push -u origin main
    ```
 
-3. **Activer GitHub Pages**
-   - Allez dans les "Settings" du dépôt
+3. **Enable GitHub Pages**
+   - Go to repository "Settings"
    - Section "Pages"
-   - Source : Sélectionnez la branche `main` et dossier `/ (root)`
-   - Cliquez sur "Save"
+   - Source: Select branch `main` and folder `/ (root)`
+   - Click "Save"
 
-4. **Accéder à votre site**
-   - Votre site sera accessible à : `https://gothamza.github.io/`
-   - Le déploiement prend 2-5 minutes
+4. **Access your site**
+   - Your site will be accessible at: `https://gothamza.github.io/`
+   - Deployment takes 2-5 minutes
 
-### Méthode 2 : Dépôt de Projet
+### Method 2: Project Repository
 
-1. **Créer un dépôt nommé "portfolio"**
+1. **Create a repository named "portfolio"**
    ```bash
    git init
    git add .
@@ -105,12 +105,12 @@ Pour que le portfolio soit complet, vous devez ajouter les images suivantes dans
    git push -u origin main
    ```
 
-2. **Activer GitHub Pages**
+2. **Enable GitHub Pages**
    - Settings → Pages
-   - Source : branche `main`, dossier `/ (root)`
+   - Source: branch `main`, folder `/ (root)`
 
-3. **Accéder à votre site**
-   - URL : `https://gothamza.github.io/portfolio/`
+3. **Access your site**
+   - URL: `https://gothamza.github.io/portfolio/`
 
 ## 🔧 Personnalisation
 
@@ -153,74 +153,80 @@ Par votre vrai lien LinkedIn :
 href="https://linkedin.com/in/votre-profil-linkedin"
 ```
 
-## 📱 Tests Locaux
+## 📱 Local Testing
 
-Pour tester en local avant de déployer :
+To test locally before deploying:
 
-1. **Ouvrir directement le fichier HTML**
-   - Double-cliquez sur `index.html`
+1. **Open HTML file directly**
+   - Double-click on `index.html`
    
-2. **Utiliser un serveur local (recommandé)**
+2. **Use a local server (recommended)**
    ```bash
-   # Avec Python
+   # With Python
    python -m http.server 8000
    
-   # Avec Node.js (npx)
+   # With Node.js (npx)
    npx http-server
    ```
    
-   Puis ouvrez : `http://localhost:8000`
+   Then open: `http://localhost:8000`
 
-## 🎯 Sections du Portfolio
+## 🎯 Portfolio Sections
 
-1. **🏠 Accueil** - Hero section avec présentation
-2. **👤 À propos** - Biographie et langues
-3. **🎓 Éducation** - Parcours académique (timeline)
-4. **💼 Expériences** - Stages et postes professionnels
-5. **🛠️ Compétences** - Technologies et frameworks
-6. **🚀 Projets** - Projets académiques avec liens GitHub
-7. **🎯 Activités** - Hackathons et activités parascolaires
-8. **📧 Contact** - Informations de contact
+1. **🏠 Home** - Hero section with introduction
+2. **👤 About** - Biography and languages
+3. **🎓 Education** - Academic background (timeline)
+4. **💼 Experience** - Internships and professional positions
+5. **🛠️ Skills** - Technologies and frameworks
+6. **🚀 Projects** - Academic projects with GitHub links
+7. **🎯 Activities** - Hackathons and extracurricular activities
+8. **📧 Contact** - Contact information
 
-## 🔗 Liens GitHub des Projets
+## 🔗 Project GitHub Links
 
-Vérifiez que ces liens sont corrects dans votre HTML :
+Verify these links are correct in your HTML:
 - [DyslexAI Hackathon](https://github.com/HAMZAuit/dexlyxia-hackathon)
 - [Health Chatbot](https://github.com/gothamza/Pixel-VisionV2)
 - [License Plate Recognition](https://github.com/gothamza/UK_PLATES_DETECTION)
 - [Gym Website](https://github.com/gothamza/gym_website_s6)
 - [Multi-dept AI Assistant](https://github.com/gothamza/multidept-ai-assistant)
 
-## 📝 TODO Après le Déploiement
+## 📝 TODO After Deployment
 
-- [ ] Ajouter vos vraies images (photo + projets)
-- [ ] Mettre à jour le lien LinkedIn
-- [ ] Tester sur mobile et tablette
-- [ ] Partager le lien sur vos réseaux sociaux
-- [ ] Ajouter le lien du portfolio dans votre CV
-- [ ] Mettre le lien dans votre bio GitHub
+- [ ] Add your actual images (photo + projects)
+- [ ] Update LinkedIn link
+- [ ] Test on mobile and tablet
+- [ ] Share the link on your social media
+- [ ] Add portfolio link to your CV
+- [ ] Put the link in your GitHub bio
 
-## 🛠️ Technologies Utilisées
+## 🛠️ Technologies Used
 
-- **HTML5** - Structure sémantique
-- **CSS3** - Styles modernes avec animations
-- **JavaScript (Vanilla)** - Interactions et sélecteur de langue
-- **Font Awesome** - Icônes
-- **Google Fonts** - Typographies (Poppins, Playfair Display)
+- **HTML5** - Semantic structure
+- **CSS3** - Modern styles with animations
+- **JavaScript (Vanilla)** - Interactions and language selector
+- **Font Awesome** - Icons
+- **Google Fonts** - Typography (Poppins, Playfair Display)
 
 ## 📧 Contact
 
 **Hamza Bouktitiya**
 - 📧 Email: bouktitiya.hamza.post@gmail.com
-- 💼 LinkedIn: [À mettre à jour]
+- 💼 LinkedIn: [To be updated]
 - 🐙 GitHub: [@gothamza](https://github.com/gothamza)
-- 📍 Localisation: Kenitra, Maroc
+- 📍 Location: Kenitra, Morocco
 
-## 📄 Licence
+## 📄 License
 
-© 2025 Hamza Bouktitiya. Tous droits réservés.
+© 2025 Hamza Bouktitiya. All rights reserved.
 
 ---
 
-**Conçu avec ❤️ et passion pour l'IA**
+**Designed with ❤️ and passion for AI**
+
+---
+
+## 🇫🇷 Version Française
+
+Pour la version française complète, consultez [README.fr.md](README.fr.md)
 
