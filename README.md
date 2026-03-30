@@ -13,6 +13,10 @@ Ce portfolio présente mon parcours académique, mes expériences professionnell
 - 🎯 **Navigation Intuitive** - Menu sticky avec smooth scroll
 - 🔗 **Liens Directs** - Vers GitHub, LinkedIn et projets
 
+## 🏠 Aperçu de la Page d'Accueil
+
+![Home Page Screenshot](images/homescreanshot.jpeg)
+
 ## 📂 Structure du Projet
 
 ```
