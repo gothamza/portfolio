@@ -662,5 +662,42 @@ function initializeFloatingIcons() {
 // Initialize floating icons when DOM is loaded
 initializeFloatingIcons();
 
+// ==========================================
+// PROJECT FILTER FUNCTIONALITY
+// ==========================================
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filterValue = button.getAttribute('data-filter');
+        
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Filter projects
+        projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            
+            if (filterValue === 'all') {
+                // Show all projects
+                card.classList.remove('hidden');
+            } else if (filterValue === category) {
+                // Show only matching category
+                card.classList.remove('hidden');
+            } else {
+                // Hide non-matching projects
+                card.classList.add('hidden');
+            }
+        });
+    });
+});
+
+// Initialize: Show all projects by default
+filterButtons[0].click();
+
 }); // End of DOMContentLoaded
 
