@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OG Preview — Hamza Bouktitiya</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #000000;
+            color: #fafafa;
+        }
+
+        .og-canvas {
+            position: relative;
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px) 0 0 / 40px 40px,
+                linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px) 0 0 / 40px 40px,
+                radial-gradient(900px 420px at 15% 20%, rgba(34, 211, 238, 0.1), transparent 60%),
+                radial-gradient(700px 360px at 85% 15%, rgba(0, 255, 102, 0.05), transparent 55%),
+                #000000;
+        }
+
+        .og-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(0, 0, 0, 0.72);
+            border-bottom: 1px solid rgba(34, 211, 238, 0.18);
+            backdrop-filter: blur(8px);
+        }
+
+        .og-logo {
+            font-family: 'Newsreader', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fafafa;
+        }
+
+        .og-nav-links {
+            display: flex;
+            gap: 18px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #a1a1aa;
+            font-family: ui-monospace, monospace;
+        }
+
+        .og-nav-links span.active {
+            color: #22d3ee;
+        }
+
+        .og-lang {
+            font-size: 11px;
+            font-family: ui-monospace, monospace;
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.25);
+            border-radius: 6px;
+            padding: 4px 10px;
+        }
+
+        .og-hero {
+            position: absolute;
+            inset: 52px 0 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 32px;
+            padding: 36px 56px 40px;
+        }
+
+        .og-copy {
+            max-width: 620px;
+        }
+
+        .og-badge {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #22d3ee;
+            border: 1px solid rgba(34, 211, 238, 0.28);
+            border-radius: 999px;
+            padding: 6px 12px;
+            margin-bottom: 18px;
+            font-family: ui-monospace, monospace;
+        }
+
+        .og-greeting {
+            display: block;
+            font-size: 18px;
+            color: #a1a1aa;
+            margin-bottom: 6px;
+        }
+
+        .og-name {
+            display: block;
+            font-family: 'Newsreader', serif;
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .og-subtitle {
+            font-size: 22px;
+            color: #d4d4d8;
+            margin-bottom: 10px;
+        }
+
+        .og-desc {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #a1a1aa;
+            margin-bottom: 24px;
+            max-width: 520px;
+        }
+
+        .og-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .og-btn {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+        }
+
+        .og-btn-primary {
+            background: #22d3ee;
+            color: #09090b;
+        }
+
+        .og-btn-secondary {
+            background: transparent;
+            color: #22d3ee;
+            border-color: rgba(34, 211, 238, 0.35);
+        }
+
+        .og-photo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .og-photo-frame {
+            width: 280px;
+            height: 320px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(34, 211, 238, 0.22);
+            box-shadow:
+                inset 0 0 28px rgba(34, 211, 238, 0.08),
+                0 20px 50px rgba(0, 0, 0, 0.55);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .og-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .og-url {
+            position: absolute;
+            bottom: 18px;
+            right: 40px;
+            font-size: 12px;
+            font-family: ui-monospace, monospace;
+            color: rgba(34, 211, 238, 0.55);
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-canvas">
+        <header class="og-nav">
+            <div class="og-logo">HB</div>
+            <nav class="og-nav-links" aria-hidden="true">
+                <span>About</span>
+                <span>Projects</span>
+                <span>Skills</span>
+                <span class="active">Contact</span>
+            </nav>
+            <div class="og-lang">EN</div>
+        </header>
+
+        <div class="og-hero">
+            <div class="og-copy">
+                <span class="og-badge">AI Engineer · PhD Candidate</span>
+                <h1>
+                    <span class="og-greeting">Hello, I'm</span>
+                    <span class="og-name">Hamza Bouktitiya</span>
+                </h1>
+                <p class="og-subtitle">Artificial Intelligence Engineer</p>
+                <p class="og-desc">Specialized in LangChain, RAG pipelines, and LLM orchestration — building production-ready AI products.</p>
+                <div class="og-buttons">
+                    <span class="og-btn og-btn-primary">View Projects</span>
+                    <span class="og-btn og-btn-secondary">Contact Me</span>
+                </div>
+            </div>
+            <div class="og-photo-wrap">
+                <div class="og-photo-frame">
+                    <img src="images/profile-photo-removebg.png" alt="Hamza Bouktitiya">
+                </div>
+            </div>
+        </div>
+
+        <div class="og-url">gothamza.github.io/portfolio</div>
+    </div>
+</body>
+</html>
