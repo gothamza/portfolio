@@ -85,22 +85,41 @@ const translations = {
 const langButtons = document.querySelectorAll('.lang-btn');
 let currentLang = 'en';
 
-// Initialize with English content
-switchLanguage('en');
+const PROJECT_CATEGORIES = {
+    fr: {
+        'ai-llm': 'IA & LLM',
+        web: 'Web & Apps',
+        vision: 'Vision par ordinateur',
+        ml: 'ML & Data'
+    },
+    en: {
+        'ai-llm': 'AI & LLM',
+        web: 'Web & Apps',
+        vision: 'Computer Vision',
+        ml: 'ML & Data'
+    }
+};
 
-langButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        if (lang !== currentLang) {
-            switchLanguage(lang);
-            currentLang = lang;
-            
-            // Update active button
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
+function updateProjectCategories(lang = currentLang) {
+    document.querySelectorAll('.project-card[data-category]').forEach(card => {
+        const category = card.getAttribute('data-category');
+        const label = PROJECT_CATEGORIES[lang]?.[category];
+        if (!label) return;
+
+        let badge = card.querySelector('.project-category');
+        if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'project-category';
+            const title = card.querySelector('h3');
+            if (title) {
+                card.insertBefore(badge, title);
+            } else {
+                card.prepend(badge);
+            }
         }
+        badge.textContent = label;
     });
-});
+}
 
 function switchLanguage(lang) {
     // Update all elements with data-fr and data-en attributes
@@ -132,7 +151,26 @@ function switchLanguage(lang) {
         element.setAttribute('aria-label', label);
         element.setAttribute('title', label);
     });
+
+    updateProjectCategories(lang);
 }
+
+// Initialize with English content
+switchLanguage('en');
+
+langButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        if (lang !== currentLang) {
+            switchLanguage(lang);
+            currentLang = lang;
+            
+            // Update active button
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        }
+    });
+});
 
 // ==========================================
 // MOBILE MENU TOGGLE + MORE DROPDOWN
@@ -863,41 +901,49 @@ initializeFloatingIcons();
 // ==========================================
 // PROJECT FILTER FUNCTIONALITY
 // ==========================================
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
+function initProjectFilters() {
+    const filtersRoot = document.getElementById('project-filters');
+    const projectsGrid = document.querySelector('#projects .projects-grid');
+    if (!filtersRoot || !projectsGrid) return;
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const filterValue = button.getAttribute('data-filter');
-        
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        // Filter projects
-        projectCards.forEach(card => {
+    function getProjectCards() {
+        return projectsGrid.querySelectorAll('.project-card');
+    }
+
+    function applyProjectFilter(filterValue) {
+        const cards = getProjectCards();
+
+        cards.forEach(card => {
             const category = card.getAttribute('data-category');
-            
-            if (filterValue === 'all') {
-                // Show all projects
-                card.classList.remove('hidden');
-            } else if (filterValue === category) {
-                // Show only matching category
-                card.classList.remove('hidden');
-            } else {
-                // Hide non-matching projects
-                card.classList.add('hidden');
+            const isVisible = filterValue === 'all' || category === filterValue;
+
+            card.classList.toggle('hidden', !isVisible);
+
+            if (isVisible) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
             }
         });
-    });
-});
 
-// Initialize: Show all projects by default
-if (filterButtons.length > 0) {
-    filterButtons[0].click();
+        filtersRoot.querySelectorAll('.filter-btn').forEach(btn => {
+            const isActive = btn.getAttribute('data-filter') === filterValue;
+            btn.classList.toggle('active', isActive);
+            btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+    }
+
+    filtersRoot.addEventListener('click', (event) => {
+        const button = event.target.closest('.filter-btn');
+        if (!button || !filtersRoot.contains(button)) return;
+
+        applyProjectFilter(button.getAttribute('data-filter'));
+    });
+
+    applyProjectFilter('all');
 }
+
+initProjectFilters();
+updateProjectCategories(currentLang);
 
 // ==========================================
 // COPY TO CLIPBOARD

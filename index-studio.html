@@ -668,20 +668,23 @@
     <section id="projects" class="projects section">
         <div class="container">
             <h2 class="section-title" data-fr="Projets Personnels" data-en="Personal Projects">Projets Personnels</h2>
+            <p class="projects-intro" data-fr="Une sélection de projets IA, full-stack et data — filtrez par domaine ou parcourez l'ensemble." data-en="A selection of AI, full-stack, and data projects — filter by domain or browse them all.">
+                A selection of AI, full-stack, and data projects — filter by domain or browse them all.
+            </p>
             
             <!-- Project Filter Buttons -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
-                <button class="filter-btn fullstack-btn" data-filter="fullstack" data-fr="Full Stack" data-en="Full Stack">Full Stack</button>
-                <button class="filter-btn nlp-btn" data-filter="nlp" data-fr="NLP & LLM" data-en="NLP & LLM">NLP & LLM</button>
-                <button class="filter-btn cv-btn" data-filter="cv" data-fr="Vision par ordinateur" data-en="Computer Vision">Computer Vision</button>
-                <button class="filter-btn mldata-btn" data-filter="mldata" data-fr="ML & Data" data-en="ML & Data">ML & Data</button>
+            <div class="project-filters" id="project-filters" role="tablist" aria-label="Project filters">
+                <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-fr="Tous" data-en="All">All</button>
+                <button type="button" class="filter-btn" data-filter="ai-llm" role="tab" aria-selected="false" data-fr="IA & LLM" data-en="AI & LLM">AI & LLM</button>
+                <button type="button" class="filter-btn" data-filter="web" role="tab" aria-selected="false" data-fr="Web & Apps" data-en="Web & Apps">Web & Apps</button>
+                <button type="button" class="filter-btn" data-filter="vision" role="tab" aria-selected="false" data-fr="Vision par ordinateur" data-en="Computer Vision">Computer Vision</button>
+                <button type="button" class="filter-btn" data-filter="ml" role="tab" aria-selected="false" data-fr="ML & Data" data-en="ML & Data">ML & Data</button>
             </div>
 
-            <div class="projects-grid">
+            <div class="projects-grid" id="projects-grid">
                 
                 <!-- Project 1.1: Intelligent Assessment System -->
-                <div class="project-card" data-category="nlp">
+                <div class="project-card" data-category="ai-llm">
                     <div class="project-header">
                         <span class="project-year" data-fr="Mars 2026" data-en="March 2026">Mars 2026</span>
                         <a href="https://github.com/gothamza/Intelligent-Assessment-System" target="_blank" class="github-link">
@@ -713,7 +716,7 @@
                 </div>
 
                 <!-- Project 1: Chatbot_odoo -->
-                <div class="project-card" data-category="nlp">
+                <div class="project-card" data-category="ai-llm">
                     <div class="project-header">
                         <span class="project-year" data-fr="Novembre 2025" data-en="November 2025">Novembre 2025</span>
                         <a href="https://github.com/gothamza/Chatbot_odoo" target="_blank" class="github-link">
@@ -735,7 +738,7 @@
                 </div>
 
                 <!-- Project 9: DAIKO Électroménager Chatbot -->
-                <div class="project-card" data-category="fullstack">
+                <div class="project-card" data-category="web">
                     <div class="project-header">
                         <span class="project-year" data-fr="Mars 2026" data-en="March 2026">March 2026</span>
                         <div class="project-links">
@@ -764,7 +767,7 @@
                 </div>
 
                 <!-- Project: Portfolio website (this site) -->
-                <div class="project-card" data-category="fullstack">
+                <div class="project-card" data-category="web">
                     <div class="project-header">
                         <span class="project-year" data-fr="2025" data-en="2025">2025</span>
                         <a href="https://github.com/gothamza/portfolio" target="_blank" class="github-link">
@@ -788,7 +791,7 @@
                 </div>
 
                 <!-- Project: Computer Vision Playground (Streamlit + Docker) -->
-                <div class="project-card" data-category="cv">
+                <div class="project-card" data-category="vision">
                     <div class="project-header">
                         <span class="project-year" data-fr="2025" data-en="2025">2025</span>
                         <a href="https://github.com/gothamza/omputer-Vision-Playground-Streamlit-Docker-" target="_blank" class="github-link">
@@ -815,7 +818,7 @@
                 </div>
 
                 <!-- Project 2: Jeu Éducatif DyslexAI -->
-                <div class="project-card" data-category="nlp">
+                <div class="project-card" data-category="ai-llm">
                     <div class="project-header">
                         <span class="project-year" data-fr="Février 2024" data-en="February 2024">Février 2024</span>
                         <a href="https://github.com/HAMZAuit/dexlyxia-hackathon" target="_blank" class="github-link">
@@ -837,7 +840,7 @@
                 </div>
 
                 <!-- Project 2: Génération d'objets 3D -->
-                <div class="project-card" data-category="cv">
+                <div class="project-card" data-category="vision">
                     <div class="project-header">
                         <span class="project-year" data-fr="Février 2024" data-en="February 2024">Février 2024</span>
                         <a href="https://github.com/gothamza/2Dto3D" target="_blank" class="github-link">
@@ -859,7 +862,7 @@
                 </div>
 
                 <!-- Project 3: Chatbot de Santé -->
-                <div class="project-card" data-category="nlp">
+                <div class="project-card" data-category="ai-llm">
                     <div class="project-header">
                         <span class="project-year" data-fr="Août 2024" data-en="August 2024">Août 2024</span>
                         <a href="https://github.com/gothamza/Pixel-VisionV2" target="_blank" class="github-link">
@@ -881,7 +884,7 @@
                 </div>
 
                 <!-- Project 4: Book Recommendation System -->
-                <div class="project-card" data-category="mldata">
+                <div class="project-card" data-category="ml">
                     <div class="project-header">
                         <span class="project-year" data-fr="Juillet 2024" data-en="July 2024">Juillet 2024</span>
                         <a href="https://github.com/gothamza/book-recommendation-system" target="_blank" class="github-link">
@@ -905,7 +908,7 @@
                 </div>
 
                 <!-- Project 5: Système QA en Darija -->
-                <div class="project-card" data-category="nlp">
+                <div class="project-card" data-category="ai-llm">
                     <div class="project-header">
                         <span class="project-year" data-fr="Décembre 2023" data-en="December 2023">Décembre 2023</span>
                         <a href="https://github.com/gothamza/darija_english1" target="_blank" class="github-link">
@@ -927,7 +930,7 @@
                 </div>
 
                 <!-- Project 6: Reconnaissance des Plaques -->
-                <div class="project-card" data-category="cv">
+                <div class="project-card" data-category="vision">
                     <div class="project-header">
                         <span class="project-year" data-fr="Juin 2023" data-en="June 2023">Juin 2023</span>
                         <a href="https://github.com/gothamza/UK_PLATES_DETECTION" target="_blank" class="github-link">
@@ -949,7 +952,7 @@
                 </div>
 
                 <!-- Project 7: Gym-Explore -->
-                <div class="project-card" data-category="mldata">
+                <div class="project-card" data-category="ml">
                     <div class="project-header">
                         <span class="project-year" data-fr="Décembre 2023" data-en="December 2023">Décembre 2023</span>
                         <a href="https://github.com/gothamza/gym-explore" target="_blank" class="github-link">
@@ -971,7 +974,7 @@
                 </div>
 
                 <!-- Project 8: Gestion Salle de Sport -->
-                <div class="project-card" data-category="fullstack">
+                <div class="project-card" data-category="web">
                     <div class="project-header">
                         <span class="project-year" data-fr="Mars - Juin 2022" data-en="March - June 2022">Mars - Juin 2022</span>
                         <a href="https://github.com/gothamza/gym_website_s6" target="_blank" class="github-link">
@@ -990,8 +993,6 @@
                         <span class="tag">Bootstrap</span>
                         <span class="tag">MySQL</span>
                     </div>
-                </div>
-
                 </div>
             </div>
         </div>
