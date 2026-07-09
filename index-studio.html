@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hamza Bouktitiya's Portfolio - Artificial Intelligence Engineer">
+    <meta name="author" content="Hamza Bouktitiya">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gothamza.github.io/">
+    <meta property="og:title" content="Hamza Bouktitiya - Artificial Intelligence Engineer">
+    <meta property="og:description" content="Passionate AI Engineer specializing in machine learning, deep learning, and full-stack development. PhD candidate in AI with expertise in NLP, computer vision, and innovative AI solutions.">
+    <meta property="og:image" content="https://gothamza.github.io/portfolio/images/profile-photo-removebg.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Hamza Bouktitiya - AI Engineer Portfolio">
+    <meta property="og:site_name" content="Hamza Bouktitiya Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gothamza.github.io/">
+    <meta name="twitter:title" content="Hamza Bouktitiya - Artificial Intelligence Engineer">
+    <meta name="twitter:description" content="Passionate AI Engineer specializing in machine learning, deep learning, and full-stack development. PhD candidate in AI with expertise in NLP, computer vision, and innovative AI solutions.">
+    <meta name="twitter:image" content="https://gothamza.github.io/portfolio/images/profile-photo-removebg.png">
+    <meta name="twitter:image:alt" content="Hamza Bouktitiya - AI Engineer Portfolio">
+    <meta name="twitter:creator" content="@gothamza">
+    
+    <title>Hamza Bouktitiya - Artificial Intelligence Engineer</title>
+    <link rel="stylesheet" href="styles-studio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="studio">
+    <canvas id="hud-bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">HB</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-fr="À propos" data-en="About">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-fr="Projets" data-en="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-fr="Compétences" data-en="Skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item nav-more-desktop">
+                    <button type="button" class="nav-more-btn" id="nav-more-btn" aria-expanded="false" aria-haspopup="true" data-fr="Plus" data-en="More">More</button>
+                    <ul class="nav-more-dropdown" id="nav-more-menu">
+                        <li><a href="#education" class="nav-link" data-fr="Éducation" data-en="Education">Education</a></li>
+                        <li><a href="#experience" class="nav-link" data-fr="Expériences" data-en="Experience">Experience</a></li>
+                        <li><a href="#activities" class="nav-link" data-fr="Activités" data-en="Activities">Activities</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-mobile-only">
+                    <a href="#education" class="nav-link" data-fr="Éducation" data-en="Education">Education</a>
+                </li>
+                <li class="nav-item nav-mobile-only">
+                    <a href="#experience" class="nav-link" data-fr="Expériences" data-en="Experience">Experience</a>
+                </li>
+                <li class="nav-item nav-mobile-only">
+                    <a href="#activities" class="nav-link" data-fr="Activités" data-en="Activities">Activities</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <div class="language-selector">
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                </div>
+                <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-inner">
+            <div class="hero-copy hero-content">
+                <span class="hero-badge" data-fr="Ingénieur IA · Doctorant" data-en="AI Engineer · PhD Candidate">AI Engineer · PhD Candidate</span>
+                <h1 class="hero-title animate-fade-in" id="hero-title">
+                    <span class="hero-greeting" data-fr="Bonjour, je suis" data-en="Hello, I'm">Hello, I'm</span>
+                    <span class="hero-name" id="hero-name" data-name="Hamza Bouktitiya">Hamza Bouktitiya</span>
+                </h1>
+                <p class="hero-subtitle animate-fade-in-delay" data-fr="Ingénieur en Intelligence Artificielle" data-en="Artificial Intelligence Engineer">
+                    Ingénieur en Intelligence Artificielle
+                </p>
+                <p class="hero-description animate-fade-in-delay-2 rotating-text">
+                    <span class="rotating-text-content"></span>
+                </p>
+                <div class="hero-buttons animate-fade-in-delay-3">
+                    <a href="#projects" class="btn btn-primary" data-fr="Voir mes projets" data-en="View Projects">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary" data-fr="Me contacter" data-en="Contact Me">Contact Me</a>
+                    <a href="PDFs/hamza_cv_en26.pdf" download class="btn btn-ghost cv-download-btn" data-fr="Télécharger CV" data-en="Download CV">Download CV</a>
+                </div>
+                <div class="social-links animate-fade-in-delay-4">
+                    <a href="https://github.com/gothamza" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hamza-bouktitiya-604471253/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-photo-wrap" id="hero-photo-slot">
+                <div class="photo-frame">
+                    <img src="images/profile-photo-removebg.png" alt="Hamza Bouktitiya" class="profile-photo-hero" id="profile-photo-hero">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Bento HUD Dashboard (Studio) -->
+    <section id="dashboard" class="bento section">
+        <div class="container">
+            <h2 class="section-title" data-fr="Aperçu rapide" data-en="Quick overview">Quick overview</h2>
+
+            <div class="bento-grid">
+                <article class="hud-panel bento-panel bento-about">
+                    <header class="hud-panel-header">
+                        <h3 data-fr="À propos" data-en="About">About</h3>
+                        <a class="hud-panel-link" href="#about" data-fr="Ouvrir →" data-en="Open →">Open →</a>
+                    </header>
+                    <p class="hud-panel-body" data-fr="Ingénieur IA & doctorant. Je construis des produits IA en production (RAG, LLM APIs, agents) avec FastAPI, LangChain et Docker." data-en="AI engineer & PhD candidate. I build production-ready AI products (RAG, LLM APIs, agents) with FastAPI, LangChain, and Docker.">
+                        AI engineer & PhD candidate. I build production-ready AI products (RAG, LLM APIs, agents) with FastAPI, LangChain, and Docker.
+                    </p>
+                    <div class="hud-metrics">
+                        <div class="hud-metric">
+                            <span class="hud-metric-label" data-fr="Localisation" data-en="Location">Location</span>
+                            <span class="hud-metric-value">Kenitra, MA</span>
+                        </div>
+                        <div class="hud-metric">
+                            <span class="hud-metric-label" data-fr="Langues" data-en="Languages">Languages</span>
+                            <span class="hud-metric-value">AR · EN · FR</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="hud-panel bento-projects">
+                    <header class="hud-panel-header">
+                        <h3 data-fr="Projets" data-en="Projects">Projects</h3>
+                        <a class="hud-panel-link" href="#projects" data-fr="Voir tous →" data-en="View all →">View all →</a>
+                    </header>
+                    <ul class="hud-list">
+                        <li>
+                            <span class="hud-dot"></span>
+                            <span class="hud-item-title">Multi-Dept AI Assistant</span>
+                            <span class="hud-item-meta">FastAPI · LangGraph · RAG</span>
+                        </li>
+                        <li>
+                            <span class="hud-dot"></span>
+                            <span class="hud-item-title">Intelligent Assessment System</span>
+                            <span class="hud-item-meta">LLMs · RAG · Evaluation</span>
+                        </li>
+                        <li>
+                            <span class="hud-dot"></span>
+                            <span class="hud-item-title">E-commerce Chat Widget</span>
+                            <span class="hud-item-meta">UI · Scenarios · Demo</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="hud-panel bento-skills">
+                    <header class="hud-panel-header">
+                        <h3 data-fr="Compétences" data-en="Skills">Skills</h3>
+                        <a class="hud-panel-link" href="#skills" data-fr="Détails →" data-en="Details →">Details →</a>
+                    </header>
+                    <div class="hud-tags">
+                        <span class="hud-tag">Python</span>
+                        <span class="hud-tag">FastAPI</span>
+                        <span class="hud-tag">LangChain</span>
+                        <span class="hud-tag">LangGraph</span>
+                        <span class="hud-tag">RAG</span>
+                        <span class="hud-tag">Docker</span>
+                        <span class="hud-tag">PostgreSQL</span>
+                    </div>
+                </article>
+
+                <article class="hud-panel bento-contact">
+                    <header class="hud-panel-header">
+                        <h3 data-fr="Contact" data-en="Contact">Contact</h3>
+                        <a class="hud-panel-link" href="#contact" data-fr="Contacter →" data-en="Reach out →">Reach out →</a>
+                    </header>
+                    <div class="hud-contact">
+                        <div class="hud-contact-row">
+                            <a class="hud-contact-link" href="mailto:bouktitiya.hamza.post@gmail.com">
+                                <span class="hud-contact-label">Email</span>
+                                <span class="hud-contact-value">bouktitiya.hamza.post@gmail.com</span>
+                            </a>
+                            <button type="button" class="copy-btn" data-copy="bouktitiya.hamza.post@gmail.com" data-fr-label="Copier l'email" data-en-label="Copy email" aria-label="Copy email" title="Copy">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="hud-contact-row">
+                            <a class="hud-contact-link" href="tel:+212688679653">
+                                <span class="hud-contact-label" data-fr="Téléphone" data-en="Phone">Phone</span>
+                                <span class="hud-contact-value">+212 688 679 653</span>
+                            </a>
+                            <button type="button" class="copy-btn" data-copy="+212 688 679 653" data-fr-label="Copier le téléphone" data-en-label="Copy phone" aria-label="Copy phone" title="Copy">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="hud-contact-actions">
+                            <a class="btn btn-secondary" href="https://github.com/gothamza" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a class="btn btn-secondary" href="https://www.linkedin.com/in/hamza-bouktitiya-604471253/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title" data-fr="À propos de moi" data-en="About Me">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-image" id="about-photo-slot">
+                    <div class="image-wrapper">
+                        <img src="images/profile-photo-removebg.png" alt="Hamza Bouktitiya" class="profile-photo" id="profile-photo-about">
+                        <div class="image-border"></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="about-intro" data-fr="Passionné par l'intelligence artificielle, je me spécialise dans la création de solutions basées sur l'IA. Avec quelques connaissances en développement, je suis prêt à mettre mes compétences au service de projets innovants." data-en="Passionate about artificial intelligence, I specialize in creating AI-based solutions. With knowledge in development, I am ready to put my skills to work on innovative projects.">
+                        Passionné par l'intelligence artificielle, je me spécialise dans la création de solutions basées sur l'IA. Avec quelques connaissances en développement, je suis prêt à mettre mes compétences au service de projets innovants.
+                    </p>
+                    <p class="about-description" data-fr="Je suis actuellement à la recherche d'opportunités pour contribuer à des travaux stimulants et avant-gardistes dans le domaine de l'intelligence artificielle et du machine learning." data-en="I am currently looking for opportunities to contribute to challenging and cutting-edge work in the field of artificial intelligence and machine learning.">
+                        Je suis actuellement à la recherche d'opportunités pour contribuer à des travaux stimulants et avant-gardistes dans le domaine de l'intelligence artificielle et du machine learning.
+                    </p>
+                    <a href="PDFs/hamza_cv_en26.pdf" download class="btn btn-download-about cv-download-btn" data-fr="📥 Télécharger mon CV complet" data-en="📥 Download my full CV">
+                        📥 Download my full CV
+                    </a>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kenitra, Maroc</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span class="info-item-value">+212-688679653</span>
+                            <button type="button" class="copy-btn copy-btn-sm" data-copy="+212688679653" data-fr-label="Copier le téléphone" data-en-label="Copy phone" aria-label="Copy phone">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span class="info-item-value">bouktitiya.hamza.post@gmail.com</span>
+                            <button type="button" class="copy-btn copy-btn-sm" data-copy="bouktitiya.hamza.post@gmail.com" data-fr-label="Copier l'email" data-en-label="Copy email" aria-label="Copy email">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="about-languages">
+                        <h3 data-fr="Langues" data-en="Languages">Langues</h3>
+                        <div class="language-bars">
+                            <div class="language-item">
+                                <div class="language-header">
+                                    <span data-fr="Arabe (Maternelle)" data-en="Arabic (Native)">Arabe (Maternelle)</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <span>Anglais (C1)</span>
+                                <span>80%</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <span>Français (B2)</span>
+                                <span>70%</span>
+                                <div class="language-bar">
+                                    <div class="language-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section">
+        <div class="education-slideshow">
+            <div class="education-slide active" style="background-image: url('images/master-image.jpeg')"></div>
+            <div class="education-slide" style="background-image: url('images/master-image2.jpeg')"></div>
+            <div class="education-slide" style="background-image: url('images/master-image3.jpeg')"></div>
+            <div class="education-slide" style="background-image: url('images/master-image4.jpeg')"></div>
+        </div>
+        <div class="education-overlay"></div>
+        <div class="container">
+            <h2 class="section-title" data-fr="Éducation" data-en="Education">Éducation</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 – Présent</span>
+                        <h3 data-fr="Doctorant en Intelligence Artificielle" data-en="PhD Candidate in Artificial Intelligence">
+                            Doctorant en Intelligence Artificielle
+                        </h3>
+                        <p data-fr="Université Ibn Tofail, Kenitra, Maroc" data-en="Ibn Tofail University, Kenitra, Morocco">
+                            Université Ibn Tofail, Kenitra, Maroc
+                        </p>
+                        <p class="thesis-title" data-fr="Thèse : Description textuelle et classification automatique des séquences vidéos par apprentissage profond" data-en="Thesis: Textual description and automatic classification of video sequences by deep learning">
+                            <strong>Thèse :</strong> Description textuelle et classification automatique des séquences vidéos par apprentissage profond
+                        </p>
+                        <p class="supervisor" data-fr="Encadré par : Professeur Housni Khalid" data-en="Supervised by: Professor Housni Khalid">
+                            <strong>Encadré par :</strong> Professeur Housni Khalid
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 – 2024</span>
+                        <h3 data-fr="Master en Intelligence Artificielle et Réalité Virtuelle" data-en="Master in Artificial Intelligence and Virtual Reality">
+                            Master en Intelligence Artificielle et Réalité Virtuelle
+                        </h3>
+                        <p data-fr="Université Ibn Tofail, Kenitra, Maroc" data-en="Ibn Tofail University, Kenitra, Morocco">
+                            Université Ibn Tofail, Kenitra, Maroc
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 – 2022</span>
+                        <h3 data-fr="Licence en Sciences Mathématiques et Informatique" data-en="Bachelor in Mathematical and Computer Science">
+                            Licence en Sciences Mathématiques et Informatique
+                        </h3>
+                        <p data-fr="Université Ibn Tofail, Kenitra, Maroc" data-en="Ibn Tofail University, Kenitra, Morocco">
+                            Université Ibn Tofail, Kenitra, Maroc
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2017 – 2018</span>
+                        <h3 data-fr="Baccalauréat en Sciences Mathématiques" data-en="Baccalaureate in Mathematical Sciences">
+                            Baccalauréat en Sciences Mathématiques
+                        </h3>
+                        <p data-fr="Lycée Sidi Aissa, Souk El Arbaa Du Gharbe" data-en="Sidi Aissa High School, Souk El Arbaa Du Gharbe">
+                            Lycée Sidi Aissa, Souk El Arbaa Du Gharbe
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience section">
+        <div class="container">
+            <h2 class="section-title" data-fr="Expériences Professionnelles" data-en="Professional Experience">Expériences Professionnelles</h2>
+            <div class="experience-grid">
+                <!-- Experience 1 -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 data-fr="Ingénieur Junior en IA" data-en="Junior AI Engineer">Ingénieur Junior en IA</h3>
+                        <span class="experience-date" data-fr="Avril 2025 - Octobre 2025" data-en="April 2025 - October 2025">Avril 2025 - Octobre 2025</span>
+                    </div>
+                    <div class="experience-company-section">
+                        <p class="experience-company">OBYSTECH SOLUTIONS, Rabat</p>
+                        <a href="PDFs/MultiDept_AI_Assistant_Demo.pdf" download class="experience-demo-btn" title="Download MultiDept AI Assistant Demo">
+                            <i class="fas fa-download"></i>
+                            <span data-fr="Démo PDF" data-en="Demo PDF">Démo PDF</span>
+                        </a>
+                    </div>
+                    <ul class="experience-details">
+                        <li data-fr="Conception d'une plateforme d'IA complète avec un front-end Next.js et un back-end FastAPI/LangChain, incluant la gestion des chats et un système de documents/dossiers avec espaces de travail d'équipe et contrôles d'accès publics/privés" data-en="Designed a complete AI platform with Next.js frontend and FastAPI/LangChain backend, including chat management and document/folder system with team workspaces and public/private access controls">
+                            Conception d'une plateforme d'IA complète avec un front-end Next.js et un back-end FastAPI/LangChain, incluant la gestion des chats et un système de documents/dossiers avec espaces de travail d'équipe et contrôles d'accès publics/privés
+                        </li>
+                        <li><strong>Front-end (Next.js/React · Tailwind)</strong></li>
+                        <li data-fr="Interface multi-chat avec sélecteur de collection, bascule RAG par chat, contrôles de rôle/contexte" data-en="Multi-chat interface with collection selector, RAG toggle per chat, role/context controls">
+                            Interface multi-chat avec sélecteur de collection, bascule RAG par chat, contrôles de rôle/contexte
+                        </li>
+                        <li data-fr="Pagination basée sur le curseur pour l'historique des chats et les documents" data-en="Cursor-based pagination for chat history and documents">
+                            Pagination basée sur le curseur pour l'historique des chats et les documents
+                        </li>
+                        <li data-fr="Espaces de travail d'équipe avec partage public/privé, routes protégées et autorisations granulaires pour les dossiers/documents ; Tailwind + bibliothèque de composants" data-en="Team workspaces with public/private sharing, protected routes and granular permissions for folders/documents; Tailwind + component library">
+                            Espaces de travail d'équipe avec partage public/privé, routes protégées et autorisations granulaires pour les dossiers/documents ; Tailwind + bibliothèque de composants
+                        </li>
+                        <li><strong>Back-end (FastAPI · LangChain/LangGraph · MCP · Ollama)</strong></li>
+                        <li data-fr="Sécurisation des API LLM (chat, RAG, génération d'images) avec schémas typés, validation, JWT/OAuth2 et contrôle d'accès par rôles pour les utilisateurs/collections" data-en="Securing LLM APIs (chat, RAG, image generation) with typed schemas, validation, JWT/OAuth2 and role-based access control for users/collections">
+                            Sécurisation des API LLM (chat, RAG, génération d'images) avec schémas typés, validation, JWT/OAuth2 et contrôle d'accès par rôles pour les utilisateurs/collections
+                        </li>
+                        <li data-fr="Pipeline RAG : ingestion (PDF/docs/txt/md), découpage, embeddings HF, recherche hybride/vectorielle avec ré-ordonnancement (MMR) ; mémoire par chat et contexte spécifique à la collection" data-en="RAG pipeline: ingestion (PDF/docs/txt/md), chunking, HF embeddings, hybrid/vector search with re-ranking (MMR); per-chat memory and collection-specific context">
+                            Pipeline RAG : ingestion (PDF/docs/txt/md), découpage, embeddings HF, recherche hybride/vectorielle avec ré-ordonnancement (MMR) ; mémoire par chat et contexte spécifique à la collection
+                        </li>
+                        <li data-fr="Flux de travail LangGraph avec mémoire gérée par PostgreSQL ; intégration MCP pour invoquer en toute sécurité des outils externes dans les graphes d'agents" data-en="LangGraph workflows with PostgreSQL-managed memory; MCP integration to securely invoke external tools in agent graphs">
+                            Flux de travail LangGraph avec mémoire gérée par PostgreSQL ; intégration MCP pour invoquer en toute sécurité des outils externes dans les graphes d'agents
+                        </li>
+                        <li data-fr="Services supplémentaires : liste des modèles, agent de références, et point de génération d'images Hugging Face" data-en="Additional services: model list, reference agent, and Hugging Face image generation endpoint">
+                            Services supplémentaires : liste des modèles, agent de références, et point de génération d'images Hugging Face
+                        </li>
+                        <li><strong data-fr="Déploiement/DevOps" data-en="Deployment/DevOps">Déploiement/DevOps</strong></li>
+                        <li data-fr="Stack multi-services Docker Compose : API FastAPI, application Next.js, service MCP, et deux bases de données — PostgreSQL + ChromaDB (vector store)" data-en="Multi-service Docker Compose stack: FastAPI API, Next.js application, MCP service, and two databases — PostgreSQL + ChromaDB (vector store)">
+                            Stack multi-services Docker Compose : API FastAPI, application Next.js, service MCP, et deux bases de données — PostgreSQL + ChromaDB (vector store)
+                        </li>
+                        <li data-fr="Parité d'environnements (dev/prod), vérifications d'état (health checks) ; secrets via fichiers d'environnement" data-en="Environment parity (dev/prod), health checks; secrets via environment files">
+                            Parité d'environnements (dev/prod), vérifications d'état (health checks) ; secrets via fichiers d'environnement
+                        </li>
+                        <li data-fr="Déploiement sur VPS avec proxy inverse/SSL, redémarrages sans interruption, logs et métriques centralisés" data-en="Deployment on VPS with reverse proxy/SSL, zero-downtime restarts, centralized logs and metrics">
+                            Déploiement sur VPS avec proxy inverse/SSL, redémarrages sans interruption, logs et métriques centralisés
+                        </li>
+                    </ul>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Tailwind</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">LangGraph</span>
+                        <span class="tech-tag">MCP</span>
+                        <span class="tech-tag">Ollama</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">ChromaDB</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">JWT/OAuth2</span>
+                    </div>
+                    <a href="https://github.com/gothamza/multidept-ai-assistant" target="_blank" class="experience-link">
+                        <i class="fab fa-github"></i> <span data-fr="Voir la démo" data-en="View Demo">Voir la démo</span>
+                    </a>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 data-fr="Stagiaire en IA" data-en="AI Intern">Stagiaire en IA</h3>
+                        <span class="experience-date" data-fr="Février 2024 – Août 2024" data-en="February 2024 – August 2024">Février 2024 – Août 2024</span>
+                    </div>
+                    <p class="experience-company">Verve Technologie, Casablanca</p>
+                    <ul class="experience-details">
+                        <li data-fr="Construction d'un système de prévision utilisant LSTM pour prédire la consommation énergétique" data-en="Built a forecasting system using LSTM to predict energy consumption">
+                            Construction d'un système de prévision utilisant LSTM pour prédire la consommation énergétique
+                        </li>
+                        <li data-fr="Utilisation de LangChain et FastAPI pour des interactions avec les modèles de langage" data-en="Used LangChain and FastAPI for interactions with language models">
+                            Utilisation de LangChain et FastAPI pour des interactions avec les modèles de langage
+                        </li>
+                        <li data-fr="Mise en place d'endpoints de génération d'images avec Stable Diffusion 1.5" data-en="Set up image generation endpoints with Stable Diffusion 1.5">
+                            Mise en place d'endpoints de génération d'images avec Stable Diffusion 1.5
+                        </li>
+                        <li data-fr="Développement d'un système RAG pour générer du texte à partir de Wikipédia et PDF" data-en="Developed a RAG system to generate text from Wikipedia and PDF">
+                            Développement d'un système RAG pour générer du texte à partir de Wikipédia et PDF
+                        </li>
+                        <li data-fr="Ajout de l'authentification JWT et de la gestion des utilisateurs" data-en="Added JWT authentication and user management">
+                            Ajout de l'authentification JWT et de la gestion des utilisateurs
+                        </li>
+                    </ul>
+                    <div class="experience-tech">
+                        <span class="tech-tag">LSTM</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Stable Diffusion</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3 data-fr="Stagiaire en Développement Web" data-en="Web Development Intern">Stagiaire en Développement Web</h3>
+                        <span class="experience-date" data-fr="Mars 2022 – Juin 2022" data-en="March 2022 – June 2022">Mars 2022 – Juin 2022</span>
+                    </div>
+                    <p class="experience-company" data-fr="Département CS, Ibn Tofail University, Kenitra" data-en="CS Department, Ibn Tofail University, Kenitra">Département CS, Ibn Tofail University, Kenitra</p>
+                    <ul class="experience-details">
+                        <li data-fr="Création d'une application web pour la gestion d'une salle de sport" data-en="Created a web application for gym management">
+                            Création d'une application web pour la gestion d'une salle de sport
+                        </li>
+                        <li data-fr="Interface pour les clients et les administrateurs" data-en="Interface for clients and administrators">
+                            Interface pour les clients et les administrateurs
+                        </li>
+                        <li data-fr="Utilisation de PHP, CSS, Bootstrap et JavaScript pour le développement full-stack" data-en="Used PHP, CSS, Bootstrap and JavaScript for full-stack development">
+                            Utilisation de PHP, CSS, Bootstrap et JavaScript pour le développement full-stack
+                        </li>
+                    </ul>
+                    <div class="experience-tech">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <a href="https://github.com/gothamza/gym_website_s6" target="_blank" class="experience-link">
+                        <i class="fab fa-github"></i> <span data-fr="Voir le code" data-en="View Code">Voir le code</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <!-- Floating SVG Background -->
+        <div class="floating-icons-container">
+            <div class="floating-icon" data-icon="anthropic">
+                <img src="images/icones/anthropic.svg" alt="Anthropic" />
+            </div>
+            <div class="floating-icon" data-icon="aws">
+                <img src="images/icones/aws-color.svg" alt="AWS" />
+            </div>
+            <div class="floating-icon" data-icon="claude">
+                <img src="images/icones/claude-color.svg" alt="Claude" />
+            </div>
+            <div class="floating-icon" data-icon="colab">
+                <img src="images/icones/colab-color.svg" alt="Colab" />
+            </div>
+            <div class="floating-icon" data-icon="cursor">
+                <img src="images/icones/cursor.svg" alt="Cursor" />
+            </div>
+            <div class="floating-icon" data-icon="gemini">
+                <img src="images/icones/gemini-color.svg" alt="Gemini" />
+            </div>
+            <div class="floating-icon" data-icon="github">
+                <img src="images/icones/github.svg" alt="GitHub" />
+            </div>
+            <div class="floating-icon" data-icon="copilot">
+                <img src="images/icones/githubcopilot.svg" alt="GitHub Copilot" />
+            </div>
+            <div class="floating-icon" data-icon="google">
+                <img src="images/icones/google-color.svg" alt="Google" />
+            </div>
+            <div class="floating-icon" data-icon="gradio">
+                <img src="images/icones/gradio-color.svg" alt="Gradio" />
+            </div>
+            <div class="floating-icon" data-icon="grok">
+                <img src="images/icones/grok.svg" alt="Grok" />
+            </div>
+            <div class="floating-icon" data-icon="groq">
+                <img src="images/icones/groq.svg" alt="Groq" />
+            </div>
+            <div class="floating-icon" data-icon="huggingface">
+                <img src="images/icones/huggingface-color.svg" alt="Hugging Face" />
+            </div>
+            <div class="floating-icon" data-icon="ibm">
+                <img src="images/icones/ibm.svg" alt="IBM" />
+            </div>
+            <div class="floating-icon" data-icon="langchain">
+                <img src="images/icones/langchain-color.svg" alt="LangChain" />
+            </div>
+            <div class="floating-icon" data-icon="langgraph">
+                <img src="images/icones/langgraph-color.svg" alt="LangGraph" />
+            </div>
+            <div class="floating-icon" data-icon="langsmith">
+                <img src="images/icones/langsmith-color.svg" alt="LangSmith" />
+            </div>
+            <div class="floating-icon" data-icon="llamaindex">
+                <img src="images/icones/llamaindex-color.svg" alt="LlamaIndex" />
+            </div>
+            <div class="floating-icon" data-icon="mcp">
+                <img src="images/icones/mcp.svg" alt="MCP" />
+            </div>
+            <div class="floating-icon" data-icon="meta">
+                <img src="images/icones/meta-color.svg" alt="Meta" />
+            </div>
+            <div class="floating-icon" data-icon="midjourney">
+                <img src="images/icones/midjourney.svg" alt="Midjourney" />
+            </div>
+            <div class="floating-icon" data-icon="midjourney">
+                <img src="images/icones/midjourney2.svg" alt="Midjourney" />
+            </div>
+            <div class="floating-icon" data-icon="n8n">
+                <img src="images/icones/n8n-color.svg" alt="N8N" />
+            </div>
+            <div class="floating-icon" data-icon="ollama">
+                <img src="images/icones/ollama.svg" alt="Ollama" />
+            </div>
+            <div class="floating-icon" data-icon="openai">
+                <img src="images/icones/openai.svg" alt="OpenAI" />
+            </div>
+            <div class="floating-icon" data-icon="perplexity">
+                <img src="images/icones/perplexity-color.svg" alt="Perplexity" />
+            </div>
+            <div class="floating-icon" data-icon="qwen">
+                <img src="images/icones/qwen-color.svg" alt="Qwen" />
+            </div>
+            <div class="floating-icon" data-icon="stability">
+                <img src="images/icones/stability-color.svg" alt="Stability AI" />
+            </div>
+            <div class="floating-icon" data-icon="mistral">
+                <img src="images/icones/mistral-color.svg" alt="Mistral AI" />
+            </div>
+        </div>
+        
+        <div class="container">
+            <h2 class="section-title" data-fr="Compétences Techniques" data-en="Technical Skills">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-fr="IA & Machine Learning" data-en="AI & Machine Learning">IA & Machine Learning</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">PyTorch3D</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">CrewAI</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Back-end</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">PL/SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Front-end & Design</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">THREE.JS</span>
+                        <span class="skill-tag">LangChain.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-fr="Analyse de Données" data-en="Data Analysis">Analyse de Données</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title" data-fr="Projets Personnels" data-en="Personal Projects">Projets Personnels</h2>
+            
+            <!-- Project Filter Buttons -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
+                <button class="filter-btn fullstack-btn" data-filter="fullstack" data-fr="Full Stack" data-en="Full Stack">Full Stack</button>
+                <button class="filter-btn nlp-btn" data-filter="nlp" data-fr="NLP & LLM" data-en="NLP & LLM">NLP & LLM</button>
+                <button class="filter-btn cv-btn" data-filter="cv" data-fr="Vision par ordinateur" data-en="Computer Vision">Computer Vision</button>
+                <button class="filter-btn mldata-btn" data-filter="mldata" data-fr="ML & Data" data-en="ML & Data">ML & Data</button>
+            </div>
+
+            <div class="projects-grid">
+                
+                <!-- Project 1.1: Intelligent Assessment System -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Mars 2026" data-en="March 2026">Mars 2026</span>
+                        <a href="https://github.com/gothamza/Intelligent-Assessment-System" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 
+                    data-fr="Système Intelligent d'Évaluation" 
+                    data-en="Intelligent Assessment System">
+                        Intelligent Assessment System
+                    </h3>
+                    <div class="project-description">
+                        <p 
+                        data-fr="Plateforme éducative basée sur l'IA permettant la génération automatique d'examens, l'évaluation des réponses et la génération de feedback personnalisé. Le système utilise des LLMs, RAG et des métriques avancées (BLEU, ROUGE, BERTScore) pour améliorer l'apprentissage des étudiants."
+                        
+                        data-en="AI-powered educational platform for automated exam generation, answer evaluation, and personalized feedback. Built with LLMs, RAG pipelines, and advanced evaluation metrics (BLEU, ROUGE, BERTScore) to enhance student learning and performance tracking.">
+                        
+                        AI-powered educational platform for automated exam generation, answer evaluation, and personalized feedback. Built with LLMs, RAG pipelines, and advanced evaluation metrics (BLEU, ROUGE, BERTScore) to enhance student learning and performance tracking.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Docker</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">LLMs</span>
+                    </div>
+                </div>
+
+                <!-- Project 1: Chatbot_odoo -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Novembre 2025" data-en="November 2025">Novembre 2025</span>
+                        <a href="https://github.com/gothamza/Chatbot_odoo" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Chatbot_odoo" data-en="Chatbot_odoo">Chatbot_odoo</h3>
+                    <div class="project-description">
+                        <p data-fr="Assistant IA intégré à Odoo ERP permettant aux utilisateurs de gérer leurs opérations business via des interactions en langage naturel. Utilise le NLP pour interpréter les requêtes et effectuer des actions complexes dans différents modules Odoo (CRM, Ventes, Inventaire, RH)." data-en="AI assistant integrated with Odoo ERP allowing users to manage business operations through natural language interactions. Uses NLP to interpret queries and perform complex actions across different Odoo modules (CRM, Sales, Inventory, HR).">
+                            Assistant IA intégré à Odoo ERP permettant aux utilisateurs de gérer leurs opérations business via des interactions en langage naturel. Utilise le NLP pour interpréter les requêtes et effectuer des actions complexes dans différents modules Odoo (CRM, Ventes, Inventaire, RH).
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Odoo API</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+
+                <!-- Project 9: DAIKO Électroménager Chatbot -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Mars 2026" data-en="March 2026">March 2026</span>
+                        <div class="project-links">
+                            <a href="https://gothamza.github.io/ecommerce-chat-widget/" target="_blank" rel="noopener noreferrer" class="demo-link" title="Live demo — interactive scenarios" aria-label="Live demo — interactive chatbot scenarios">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://github.com/gothamza/ecommerce-chat-widget" target="_blank" rel="noopener noreferrer" class="github-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <h3 data-fr="Widget chatbot e-commerce (DAIKO exemple)" data-en="Web chatbot widget for e-commerce (DAIKO example)">Web chatbot widget for e-commerce</h3>
+                    <div class="project-description">
+                        <p data-fr="Démo de widget de chat e-commerce (exemple DAIKO), interface modulaire avec actions rapides et cartes produit. Démo en ligne sur GitHub Pages avec plusieurs scénarios interactifs pour illustrer le fonctionnement du widget."
+                           data-en="Demo e-commerce chat widget (DAIKO example), modular interface with quick actions and product cards. Live GitHub Pages demo with interactive scenarios that showcase how the chatbot widget behaves.">
+                            Démo de widget de chat e-commerce (exemple DAIKO), interface modulaire avec actions rapides et cartes produit. Démo en ligne sur GitHub Pages avec plusieurs scénarios interactifs pour illustrer le fonctionnement du widget.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Chatbot</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                </div>
+
+                <!-- Project: Portfolio website (this site) -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="2025" data-en="2025">2025</span>
+                        <a href="https://github.com/gothamza/portfolio" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Portfolio web professionnel" data-en="Professional web portfolio">Professional web portfolio</h3>
+                    <div class="project-description">
+                        <p data-fr="Code source de ce portfolio : site statique responsive (HTML, CSS, JavaScript vanilla), bilingue FR/EN, animations et navigation fluide, déployé sur GitHub Pages."
+                           data-en="Source code for this portfolio: responsive static site (HTML, vanilla CSS/JS), bilingual FR/EN, smooth animations and navigation, deployed on GitHub Pages.">
+                            Source code for this portfolio: responsive static site (HTML, vanilla CSS/JS), bilingual FR/EN, smooth animations and navigation, deployed on GitHub Pages.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">GitHub Pages</span>
+                    </div>
+                </div>
+
+                <!-- Project: Computer Vision Playground (Streamlit + Docker) -->
+                <div class="project-card" data-category="cv">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="2025" data-en="2025">2025</span>
+                        <a href="https://github.com/gothamza/omputer-Vision-Playground-Streamlit-Docker-" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Computer Vision Playground" data-en="Computer Vision Playground ">Computer Vision Playground (Streamlit + Docker)</h3>
+                    <div class="project-description">
+                        <p data-fr="Application Streamlit multi-pages (Docker-ready) qui regroupe mes projets de vision par ordinateur : détection de visages (MTCNN), reconnaissance faciale (OpenCV LBPH), détection d’objets (YOLOv8) et estimation de pose (MediaPipe Pose), avec upload d’images et visualisation des résultats."
+                           data-en="Docker-ready multi-page Streamlit app showcasing my computer-vision work: face detection (MTCNN), face recognition (OpenCV LBPH), object detection (YOLOv8), and pose estimation (MediaPipe Pose), with image uploads and visualized results.">
+                            Docker-ready multi-page Streamlit app showcasing my computer-vision work: face detection (MTCNN), face recognition (OpenCV LBPH), object detection (YOLOv8), and pose estimation (MediaPipe Pose), with image uploads and visualized results.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">YOLOv8</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">MediaPipe</span>
+                        <span class="tag">MTCNN</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Jeu Éducatif DyslexAI -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Février 2024" data-en="February 2024">Février 2024</span>
+                        <a href="https://github.com/HAMZAuit/dexlyxia-hackathon" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Jeu Éducatif - DyslexAI" data-en="Educational Game - DyslexAI">Jeu Éducatif - DyslexAI</h3>
+                    <div class="project-description">
+                        <p data-fr="Création d'un jeu lors du hackathon DyslexAI pour aider les enfants à améliorer leur prononciation et l'apprentissage des mots (Python/Django)." data-en="Created a game during the DyslexAI hackathon to help children improve their pronunciation and word learning (Python/Django).">
+                            Création d'un jeu lors du hackathon DyslexAI pour aider les enfants à améliorer leur prononciation et l'apprentissage des mots (Python/Django).
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Education</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Génération d'objets 3D -->
+                <div class="project-card" data-category="cv">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Février 2024" data-en="February 2024">Février 2024</span>
+                        <a href="https://github.com/gothamza/2Dto3D" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Génération d'Objets 3D" data-en="3D Object Generation">Génération d'Objets 3D</h3>
+                    <div class="project-description">
+                        <p data-fr="Création d'un objet 3D à partir d'une image 2D à l'aide de réseaux neuronaux de génération de vues multiples et de représentations implicites (NeRF)." data-en="Creating 3D objects from 2D images using multi-view generation neural networks and implicit representations (NeRF).">
+                            Création d'un objet 3D à partir d'une image 2D à l'aide de réseaux neuronaux de génération de vues multiples et de représentations implicites (NeRF).
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">NeRF</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">3D</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Chatbot de Santé -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Août 2024" data-en="August 2024">Août 2024</span>
+                        <a href="https://github.com/gothamza/Pixel-VisionV2" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Chatbot de Santé - ThinkAI" data-en="Health Chatbot - ThinkAI">Chatbot de Santé - ThinkAI</h3>
+                    <div class="project-description">
+                        <p data-fr="Développement d'un chatbot utilisant Python, Ollama et Streamlit pour l'interaction utilisateur. Le chatbot permet aux utilisateurs de fournir des données sous forme de texte ou d'images, avec une fonctionnalité de tampon pour des interactions continues." data-en="Developed a chatbot using Python, Ollama and Streamlit for user interaction. The chatbot allows users to provide inputs as text or images, with buffer functionality for continuous interactions.">
+                            Développement d'un chatbot utilisant Python, Ollama et Streamlit pour l'interaction utilisateur. Le chatbot permet aux utilisateurs de fournir des données sous forme de texte ou d'images, avec une fonctionnalité de tampon pour des interactions continues.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Ollama</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">LLM</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Book Recommendation System -->
+                <div class="project-card" data-category="mldata">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Juillet 2024" data-en="July 2024">Juillet 2024</span>
+                        <a href="https://github.com/gothamza/book-recommendation-system" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Système de Recommandation de Livres" data-en="Book Recommendation System">Système de Recommandation de Livres</h3>
+                    <div class="project-description">
+                        <p data-fr="Développement d'un système de recommandation de livres utilisant des techniques de filtrage collaboratif et de traitement des données. Le système analyse les préférences des utilisateurs et suggère des livres pertinents basés sur des algorithmes de machine learning." data-en="Developed a book recommendation system using collaborative filtering techniques and data processing. The system analyzes user preferences and suggests relevant books based on machine learning algorithms.">
+                            Développement d'un système de recommandation de livres utilisant des techniques de filtrage collaboratif et de traitement des données. Le système analyse les préférences des utilisateurs et suggère des livres pertinents basés sur des algorithmes de machine learning.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">TF-IDF</span>
+                        <span class="tag">Data Processing</span>
+                        <span class="tag">Streamlit</span>
+
+                    </div>
+                </div>
+
+                <!-- Project 5: Système QA en Darija -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Décembre 2023" data-en="December 2023">Décembre 2023</span>
+                        <a href="https://github.com/gothamza/darija_english1" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Système de Questions-Réponses en Darija" data-en="Darija Q&A System">Système de Questions-Réponses en Darija</h3>
+                    <div class="project-description">
+                        <p data-fr="Développement d'un système NLP permettant la réponse aux questions (QA) en darija marocaine et en anglais par l'entraînement de trois modèles : un modèle QA basé sur Transformers, un modèle Seq2Seq pour la traduction darija vers anglais, et un modèle LSTM pour la traduction anglais vers darija." data-en="Developed an NLP system for question answering (QA) in Moroccan darija and English by training three models: a Transformer-based QA model, a Seq2Seq model for darija to English translation, and an LSTM model for English to darija translation.">
+                            Développement d'un système NLP permettant la réponse aux questions (QA) en darija marocaine et en anglais par l'entraînement de trois modèles : un modèle QA basé sur Transformers, un modèle Seq2Seq pour la traduction darija vers anglais, et un modèle LSTM pour la traduction anglais vers darija.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Transformers</span>
+                        <span class="tag">Seq2Seq</span>
+                        <span class="tag">LSTM</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: Reconnaissance des Plaques -->
+                <div class="project-card" data-category="cv">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Juin 2023" data-en="June 2023">Juin 2023</span>
+                        <a href="https://github.com/gothamza/UK_PLATES_DETECTION" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Reconnaissance des Plaques d'Immatriculation" data-en="License Plate Recognition">Reconnaissance des Plaques d'Immatriculation</h3>
+                    <div class="project-description">
+                        <p data-fr="Développement d'un modèle de reconnaissance d'images personnalisé pour détecter les caractères des plaques minéralogiques. Génération de 1 700 caractéristiques par caractère avec HOG. Entraînement des modèles KNN et SVM avec une précision de 98,9% sur les données de test." data-en="Developed a custom image recognition model for license plate character detection. Generated 1,700 features per character using HOG. Trained KNN and SVM models achieving 98.9% accuracy on test data.">
+                            Développement d'un modèle de reconnaissance d'images personnalisé pour détecter les caractères des plaques minéralogiques. Génération de 1 700 caractéristiques par caractère avec HOG. Entraînement des modèles KNN et SVM avec une précision de 98,9% sur les données de test.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">HOG</span>
+                        <span class="tag">SVM</span>
+                        <span class="tag">KNN</span>
+                    </div>
+                </div>
+
+                <!-- Project 7: Gym-Explore -->
+                <div class="project-card" data-category="mldata">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Décembre 2023" data-en="December 2023">Décembre 2023</span>
+                        <a href="https://github.com/gothamza/gym-explore" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3>Gym-Explore</h3>
+                    <div class="project-description">
+                        <p data-fr="Création d'une interface utilisateur utilisant Streamlit et PyTorch pour permettre aux utilisateurs de sélectionner différents jeux et algorithmes (Deep Q-Learning, OOP). Ajustement des hyperparamètres et sauvegarde des résultats au format CSV avec graphiques montrant le taux d'apprentissage." data-en="Created a user interface using Streamlit and PyTorch allowing users to select different games and algorithms (Deep Q-Learning, OOP). Hyperparameter tuning and results saved as CSV with graphs showing learning rate.">
+                            Création d'une interface utilisateur utilisant Streamlit et PyTorch pour permettre aux utilisateurs de sélectionner différents jeux et algorithmes (Deep Q-Learning, OOP). Ajustement des hyperparamètres et sauvegarde des résultats au format CSV avec graphiques montrant le taux d'apprentissage.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">Reinforcement Learning</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Deep Q-Learning</span>
+                    </div>
+                </div>
+
+                <!-- Project 8: Gestion Salle de Sport -->
+                <div class="project-card" data-category="fullstack">
+                    <div class="project-header">
+                        <span class="project-year" data-fr="Mars - Juin 2022" data-en="March - June 2022">Mars - Juin 2022</span>
+                        <a href="https://github.com/gothamza/gym_website_s6" target="_blank" class="github-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <h3 data-fr="Gestion de Salle de Sport" data-en="Gym Management System">Gestion de Salle de Sport</h3>
+                    <div class="project-description">
+                        <p data-fr="Création d'une application web pour gérer une salle de sport, à la fois pour les clients et les administrateurs. Développement front-end et back-end en PHP, CSS, Bootstrap et JavaScript." data-en="Created a web application to manage a gym, for both clients and administrators. Front-end and back-end development in PHP, CSS, Bootstrap and JavaScript.">
+                            Création d'une application web pour gérer une salle de sport, à la fois pour les clients et les administrateurs. Développement front-end et back-end en PHP, CSS, Bootstrap et JavaScript.
+                        </p>
+                    </div>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="activities section">
+        <div class="container">
+            <h2 class="section-title" data-fr="Activités Parascolaires" data-en="Extracurricular Activities">Activités Parascolaires</h2>
+            <div class="activities-grid">
+                <!-- Hackathon ThinkAI -->
+                <div class="activity-card" data-event="thinkai">
+                    <div class="activity-image-container">
+                        <img src="images/Hackathon ThinkAI.jpg" class="activity-image active" alt="Hackathon ThinkAI">
+                        <img src="images/Hackathon ThinkAI2.jpeg" class="activity-image" alt="Hackathon ThinkAI 2">
+                        <div class="activity-image-overlay"></div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Hackathon ThinkAI</h3>
+                        <p data-fr="Organisé à l'école de codage 1337 de l'UM6P" data-en="Organized at UM6P's 1337 coding school">
+                            Organisé à l'école de codage 1337 de l'UM6P
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Hackathon DyslexAI -->
+                <div class="activity-card highlight" data-event="dyslexai">
+                    <div class="activity-image-container">
+                        <img src="images/Hackathon DyslexAI.jpeg" class="activity-image active" alt="Hackathon DyslexAI">
+                        <img src="images/Hackathon DyslexAI2.jpeg" class="activity-image" alt="Hackathon DyslexAI 2">
+                        <div class="activity-image-overlay"></div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Hackathon DyslexAI</h3>
+                        <p data-fr="Université Al Akhawayn, Ifrane - TOP 3" data-en="Al Akhawayn University, Ifrane - TOP 3">
+                            Université Al Akhawayn, Ifrane - TOP 3
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Club Pragnomos -->
+                <div class="activity-card" data-event="club">
+                    <div class="activity-image-container">
+                        <img src="images/clube1.jpeg" class="activity-image active" alt="Club Pragnomos">
+                        <img src="images/clube2.JPG" class="activity-image" alt="Club Pragnomos 2">
+                        <img src="images/IMG_4480.JPG" class="activity-image" alt="Club Pragnomos 4">
+                        <div class="activity-image-overlay"></div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-fr="Co-fondateur du club Pragnomos" data-en="Co-founder of Pragnomos Club">Co-fondateur du club Pragnomos</h3>
+                        <p data-fr="Club étudiant dédié à l'IA et à la technologie" data-en="Student club dedicated to AI and technology">
+                            Club étudiant dédié à l'IA et à la technologie
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Agora Presentation -->
+                <div class="activity-card" data-event="agora">
+                    <div class="activity-image-container">
+                        <img src="images/clube presnetation.jpeg" class="activity-image active" alt="Agora Presentation">
+                        <img src="images/clube presnetation3.JPG" class="activity-image" alt="Agora Presentation 2">
+                        <img src="images/clube presnetation4.JPG" class="activity-image" alt="Agora Presentation 3">
+                        <img src="images/clube presnetation5.JPG" class="activity-image" alt="Agora Presentation 4">
+                        <div class="activity-image-overlay"></div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3 data-fr="Présentation publique - Événement Agora" data-en="Public Presentation - Agora Event">Présentation publique - Événement Agora</h3>
+                        <p data-fr="Présentation d'un cours pratique de Machine Learning lors de l'événement Agora organisé par le club Prognomos" data-en="Presentation of a practical Machine Learning course at the Agora event organized by Prognomos club">
+                            Présentation d'un cours pratique de Machine Learning lors de l'événement Agora organisé par le club Prognomos
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sports -->
+                <div class="activity-card" data-event="sports">
+                    <div class="activity-image-container">
+                        <img src="images/SPORTS3.jpg" class="activity-image active" alt="Sports">
+                        <div class="activity-image-overlay"></div>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h3>Sports</h3>
+                        <p>Basketball / Karaté</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title" data-fr="Contactez-moi" data-en="Contact Me">Contactez-moi</h2>
+            <p class="contact-subtitle" data-fr="Intéressé par une collaboration ou avez-vous une opportunité à discuter ? N'hésitez pas à me contacter !" data-en="Interested in collaboration or have an opportunity to discuss? Feel free to contact me!">
+                Intéressé par une collaboration ou avez-vous une opportunité à discuter ? N'hésitez pas à me contacter !
+            </p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-card-label">Email</h3>
+                        <div class="contact-detail">
+                            <a class="contact-detail-value" href="mailto:bouktitiya.hamza.post@gmail.com" title="bouktitiya.hamza.post@gmail.com">bouktitiya.hamza.post@gmail.com</a>
+                            <button type="button" class="copy-btn contact-detail-copy" data-copy="bouktitiya.hamza.post@gmail.com" data-fr-label="Copier l'email" data-en-label="Copy email" aria-label="Copy email">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="contact-card-label" data-fr="Téléphone" data-en="Phone">Téléphone</h3>
+                        <div class="contact-detail">
+                            <a class="contact-detail-value" href="tel:+212688679653">+212 688 679 653</a>
+                            <button type="button" class="copy-btn contact-detail-copy" data-copy="+212688679653" data-fr-label="Copier le téléphone" data-en-label="Copy phone" aria-label="Copy phone">
+                                <i class="fas fa-copy" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="contact-card-label" data-fr="Localisation" data-en="Location">Localisation</h3>
+                        <div class="contact-detail contact-detail--static">
+                            <span class="contact-detail-value" data-fr="Kenitra, Maroc" data-en="Kenitra, Morocco">Kenitra, Maroc</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-links-large">
+                    <a href="https://github.com/gothamza" target="_blank" class="contact-link-btn github">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hamza-bouktitiya-604471253/" target="_blank" class="contact-link-btn linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hamza Bouktitiya. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+            <p data-fr="Conçu avec passion et créativité" data-en="Designed with passion and creativity">Conçu avec passion et créativité</p>
+        </div>
+    </footer>
+
+    <script src="script-studio.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Test — Pick Your Style | Hamza Bouktitiya</title>
+    <link rel="stylesheet" href="design-test.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=Newsreader:wght@400;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-current" id="body">
+
+    <div class="test-bar">
+        <div>
+            <p><strong>Pick a design</strong> — Switch between Current, Studio (cyan), and Code (green) to decide which direction to apply to your real site.</p>
+            <a href="index.html">← Back to live site</a> · <a href="DESIGN.md">DESIGN.md</a>
+        </div>
+        <div class="theme-picker" role="group" aria-label="Theme selector">
+            <button type="button" class="theme-btn active" data-theme="current">Current</button>
+            <button type="button" class="theme-btn" data-theme="studio">Studio</button>
+            <button type="button" class="theme-btn" data-theme="code">Code</button>
+        </div>
+    </div>
+
+    <div class="compare-panel">
+        <div class="compare-card">
+            <h3>Current</h3>
+            <ul>
+                <li>Purple / pink gradients</li>
+                <li>Poppins + Playfair</li>
+                <li>Centered hero + orbs</li>
+                <li>Pill buttons + glow</li>
+            </ul>
+        </div>
+        <div class="compare-card studio">
+            <h3>Studio</h3>
+            <ul>
+                <li>Cyan accent, clean dark</li>
+                <li>DM Sans + Newsreader</li>
+                <li>Split hero + grid bg</li>
+                <li>Minimal, professional</li>
+            </ul>
+        </div>
+        <div class="compare-card code">
+            <h3>Code</h3>
+            <ul>
+                <li>GitHub-style green accent</li>
+                <li>JetBrains Mono touches</li>
+                <li>IDE syntax colors</li>
+                <li>Dev / engineer vibe</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pick-bar">
+        <p>When you've decided, tell me: <strong>"use current"</strong>, <strong>"use studio"</strong>, or <strong>"use code"</strong> — I'll apply it to your full site.</p>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">HB</a>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Experience</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <pre class="code-deco" aria-hidden="true"><span class="kw">class</span> <span class="fn">AIEngineer</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="acc">self</span>):
+        <span class="acc">self</span>.skills = [<span class="str">"RAG"</span>, <span class="str">"LLMs"</span>]
+        <span class="acc">self</span>.stack = [<span class="str">"FastAPI"</span>, <span class="str">"Docker"</span>]
+
+    <span class="kw">def</span> <span class="fn">build</span>(<span class="acc">self</span>, project):
+        <span class="kw">return</span> <span class="acc">self</span>.deploy(project)  <span class="cm"># production-ready</span></pre>
+        </div>
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <span class="hero-badge">AI Engineer · PhD Candidate</span>
+                <h1 class="hero-title">
+                    <span class="hero-greeting">Hello, I'm</span>
+                    <span class="hero-name">Hamza <span class="name-accent">Bouktitiya</span></span>
+                </h1>
+                <p class="hero-subtitle">Artificial Intelligence Engineer</p>
+                <p class="hero-desc">
+                    Building production-ready AI platforms — RAG pipelines, LLM APIs, and agent workflows with FastAPI, LangChain, and Docker.
+                </p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary">View Projects</a>
+                    <a href="#" class="btn btn-secondary">Contact Me</a>
+                    <a href="#" class="btn btn-ghost">Download CV</a>
+                    <a href="#" class="btn btn-download btn-secondary">📄 Download CV</a>
+                </div>
+            </div>
+            <div class="hero-photo-wrap">
+                <div class="photo-frame">
+                    <img src="images/profile-photo-removebg.png" alt="Hamza Bouktitiya">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sample-section">
+        <h2>Featured work</h2>
+        <div class="sample-grid">
+            <article class="sample-card">
+                <h3><span class="title-plain">Multi-Dept AI Assistant</span><span class="title-code">multi_dept_assistant()</span></h3>
+                <p>FastAPI + LangGraph platform with RAG, ChromaDB, and team workspaces.</p>
+                <span class="tag">LangChain · Docker</span>
+            </article>
+            <article class="sample-card">
+                <h3><span class="title-plain">Intelligent Assessment System</span><span class="title-code">assessment_system()</span></h3>
+                <p>LLM-powered exam generation and evaluation with RAG pipelines.</p>
+                <span class="tag">RAG · FastAPI</span>
+            </article>
+            <article class="sample-card">
+                <h3><span class="title-plain">Health Chatbot — ThinkAI</span><span class="title-code">health_chatbot()</span></h3>
+                <p>Multimodal chatbot with Ollama and Streamlit for text and image input.</p>
+                <span class="tag">LLM · Python</span>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        const body = document.getElementById('body');
+        const buttons = document.querySelectorAll('.theme-btn');
+        const themes = ['current', 'studio', 'code'];
+
+        function setTheme(name) {
+            themes.forEach(t => body.classList.remove('theme-' + t));
+            body.classList.add('theme-' + name);
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === name);
+            });
+        }
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => setTheme(btn.dataset.theme));
+        });
+    </script>
+</body>
+</html>
