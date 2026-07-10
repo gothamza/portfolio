@@ -73,7 +73,7 @@ body.studio {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.55;
 }
 
 body.studio .hero,
@@ -809,8 +809,7 @@ body.studio .about-image .image-wrapper {
 /* About — editorial profile */
 #about.section {
     background:
-        linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 45%),
-        #000000;
+        linear-gradient(135deg, rgba(34, 211, 238, 0.03) 0%, transparent 45%);
 }
 
 #about .section-title::after {
@@ -819,7 +818,12 @@ body.studio .about-image .image-wrapper {
     box-shadow: 0 0 10px rgba(0, 255, 102, 0.35);
 }
 
-/* Education — cinematic (title on dark overlay) */
+/* Education — cinematic (blocks canvas effect) */
+#education.section {
+    background: #000000;
+    isolation: isolate;
+}
+
 #education.section .section-title {
     color: #fafafa;
     text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
@@ -839,8 +843,7 @@ body.studio .about-image .image-wrapper {
             transparent 40px,
             rgba(34, 211, 238, 0.015) 40px,
             rgba(34, 211, 238, 0.015) 41px
-        ),
-        #000000;
+        );
 }
 
 #experience .section-title::after {
@@ -852,8 +855,7 @@ body.studio .about-image .image-wrapper {
 /* Skills — terminal matrix */
 #skills.section {
     background:
-        radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.07) 1px, transparent 0) 0 0 / 24px 24px,
-        linear-gradient(180deg, #000000 0%, rgba(9, 9, 11, 0.98) 100%);
+        radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.07) 1px, transparent 0) 0 0 / 24px 24px;
 }
 
 #skills .section-title::after {
@@ -869,8 +871,7 @@ body.studio .about-image .image-wrapper {
 #projects.section {
     background:
         linear-gradient(90deg, rgba(34, 211, 238, 0.02) 1px, transparent 1px) 0 0 / 48px 48px,
-        linear-gradient(rgba(34, 211, 238, 0.02) 1px, transparent 1px) 0 0 / 48px 48px,
-        #000000;
+        linear-gradient(rgba(34, 211, 238, 0.02) 1px, transparent 1px) 0 0 / 48px 48px;
 }
 
 #projects .section-title::after {
@@ -883,8 +884,7 @@ body.studio .about-image .image-wrapper {
 /* Activities — media gallery */
 #activities.section {
     background:
-        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(0, 255, 102, 0.04), transparent),
-        #000000;
+        radial-gradient(ellipse 80% 50% at 50% 100%, rgba(0, 255, 102, 0.04), transparent);
 }
 
 #activities .section-title::after {
@@ -895,8 +895,7 @@ body.studio .about-image .image-wrapper {
 /* Contact — secure channel */
 #contact.section {
     background:
-        radial-gradient(600px 280px at 100% 0%, rgba(34, 211, 238, 0.06), transparent),
-        #000000;
+        radial-gradient(600px 280px at 100% 0%, rgba(34, 211, 238, 0.06), transparent);
 }
 
 #contact .section-title::after {
@@ -1439,8 +1438,8 @@ body.studio .about-image .image-wrapper {
     height: 100%;
     background: linear-gradient(
         160deg,
-        rgba(0, 0, 0, 0.92) 0%,
-        rgba(0, 0, 0, 0.78) 45%,
+        rgba(0, 0, 0, 0.94) 0%,
+        rgba(0, 0, 0, 0.82) 45%,
         rgba(34, 211, 238, 0.12) 100%
     );
     z-index: 1;

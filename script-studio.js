@@ -630,8 +630,17 @@ scrollTopBtn.addEventListener('mouseleave', () => {
         ctx.fill();
     }
 
+    function isOverEducation() {
+        const edu = document.getElementById('education');
+        if (!edu || !mouse.active) return false;
+        const rect = edu.getBoundingClientRect();
+        return mouse.y >= rect.top && mouse.y <= rect.bottom;
+    }
+
     function drawCursorGlassLighting() {
         if (!mouse.active || !points.length) return;
+        // Keep Education cinematic — no glass lighting there
+        if (isOverEducation()) return;
 
         const mx = mouse.x;
         const my = mouse.y;
@@ -684,13 +693,14 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 
         const pullRadius = 160;
         const pullStrength = 10;
+        const overEducation = isOverEducation();
 
         for (let i = 0; i < points.length; i++) {
             const p = points[i];
             p.x = p.ox;
             p.y = p.oy;
 
-            if (mouse.active) {
+            if (mouse.active && !overEducation) {
                 const dx = mouse.x - p.x;
                 const dy = mouse.y - p.y;
                 const dist = Math.hypot(dx, dy);
@@ -702,8 +712,11 @@ scrollTopBtn.addEventListener('mouseleave', () => {
             }
         }
 
-        // Glass triangles follow the warped blue-dot mesh
+        // Glass triangles follow the warped blue-dot mesh (all sections except Education)
         drawCursorGlassLighting();
+
+        // Dim the particle network over Education so slideshow stays clean
+        const networkAlpha = overEducation ? 0.06 : 0.22;
 
         ctx.lineWidth = 1;
         for (let i = 0; i < points.length; i++) {
@@ -718,7 +731,7 @@ scrollTopBtn.addEventListener('mouseleave', () => {
                 const dist = Math.hypot(dx, dy);
                 if (dist > linkDist) continue;
 
-                const alpha = (1 - dist / linkDist) * 0.22;
+                const alpha = (1 - dist / linkDist) * networkAlpha;
                 ctx.strokeStyle = `rgba(34, 211, 238, ${alpha})`;
                 ctx.beginPath();
                 ctx.moveTo(a.x, a.y);
@@ -727,7 +740,9 @@ scrollTopBtn.addEventListener('mouseleave', () => {
                 links++;
             }
 
-            ctx.fillStyle = 'rgba(34, 211, 238, 0.35)';
+            ctx.fillStyle = overEducation
+                ? 'rgba(34, 211, 238, 0.08)'
+                : 'rgba(34, 211, 238, 0.35)';
             ctx.beginPath();
             ctx.arc(a.x, a.y, 1.2, 0, Math.PI * 2);
             ctx.fill();
