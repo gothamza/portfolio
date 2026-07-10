@@ -569,6 +569,12 @@ scrollTopBtn.addEventListener('mouseleave', () => {
     const spacing = 88;
     const linkDist = 132;
     const maxLinksPerPoint = 4;
+    let gridOffsetX = 0;
+    let gridOffsetY = 0;
+    let gridCols = 0;
+    let gridRows = 0;
+    // ~half a triangle when cursor is at cell center
+    const lightRadius = spacing * 0.42;
 
     function resize() {
         dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -584,18 +590,18 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 
     function buildGrid() {
         points = [];
-        const cols = Math.ceil(width / spacing) + 1;
-        const rows = Math.ceil(height / spacing) + 1;
-        const offsetX = (width - (cols - 1) * spacing) * 0.5;
-        const offsetY = (height - (rows - 1) * spacing) * 0.5;
+        gridCols = Math.ceil(width / spacing) + 1;
+        gridRows = Math.ceil(height / spacing) + 1;
+        gridOffsetX = (width - (gridCols - 1) * spacing) * 0.5;
+        gridOffsetY = (height - (gridRows - 1) * spacing) * 0.5;
 
-        for (let y = 0; y < rows; y++) {
-            for (let x = 0; x < cols; x++) {
+        for (let y = 0; y < gridRows; y++) {
+            for (let x = 0; x < gridCols; x++) {
                 points.push({
-                    ox: offsetX + x * spacing,
-                    oy: offsetY + y * spacing,
-                    x: offsetX + x * spacing,
-                    y: offsetY + y * spacing
+                    ox: gridOffsetX + x * spacing,
+                    oy: gridOffsetY + y * spacing,
+                    x: gridOffsetX + x * spacing,
+                    y: gridOffsetY + y * spacing
                 });
             }
         }
@@ -609,6 +615,67 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 
     function onMouseLeave() {
         mouse.active = false;
+    }
+
+    function pointAt(col, row) {
+        return points[row * gridCols + col];
+    }
+
+    function fillTriangle(a, b, c) {
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.lineTo(c.x, c.y);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function drawCursorGlassLighting() {
+        if (!mouse.active || !points.length) return;
+
+        const mx = mouse.x;
+        const my = mouse.y;
+        const centerCol = Math.floor((mx - gridOffsetX) / spacing);
+        const centerRow = Math.floor((my - gridOffsetY) / spacing);
+        // Only cells near the cursor (tight glow)
+        const cellReach = 1;
+
+        // Light hugs the cursor — covers ~half a triangle at cell center
+        const glass = ctx.createRadialGradient(mx, my, 0, mx, my, lightRadius);
+        glass.addColorStop(0, 'rgba(210, 220, 230, 0.34)');
+        glass.addColorStop(0.45, 'rgba(160, 170, 180, 0.14)');
+        glass.addColorStop(0.8, 'rgba(120, 130, 140, 0.04)');
+        glass.addColorStop(1, 'rgba(120, 130, 140, 0)');
+        ctx.fillStyle = glass;
+
+        for (let row = centerRow - cellReach; row <= centerRow + cellReach; row++) {
+            for (let col = centerCol - cellReach; col <= centerCol + cellReach; col++) {
+                if (col < 0 || row < 0 || col >= gridCols - 1 || row >= gridRows - 1) continue;
+
+                // Use live blue-dot positions (warped by cursor pull)
+                const tl = pointAt(col, row);
+                const tr = pointAt(col + 1, row);
+                const bl = pointAt(col, row + 1);
+                const br = pointAt(col + 1, row + 1);
+                const mid = {
+                    x: (tl.x + tr.x + br.x + bl.x) * 0.25,
+                    y: (tl.y + tr.y + br.y + bl.y) * 0.25
+                };
+
+                if (Math.hypot(mx - mid.x, my - mid.y) > lightRadius + spacing * 0.35) continue;
+
+                // Alternate pair: neighbors get the other orientation
+                const useHorizontal = ((col + row) % 2 === 0);
+
+                if (useHorizontal) {
+                    fillTriangle(tl, bl, mid); // left
+                    fillTriangle(tr, br, mid); // right
+                } else {
+                    fillTriangle(tl, tr, mid); // top
+                    fillTriangle(bl, br, mid); // bottom
+                }
+            }
+        }
     }
 
     function draw() {
@@ -634,6 +701,9 @@ scrollTopBtn.addEventListener('mouseleave', () => {
                 }
             }
         }
+
+        // Glass triangles follow the warped blue-dot mesh
+        drawCursorGlassLighting();
 
         ctx.lineWidth = 1;
         for (let i = 0; i < points.length; i++) {
