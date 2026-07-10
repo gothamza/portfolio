@@ -621,13 +621,11 @@ scrollTopBtn.addEventListener('mouseleave', () => {
         return points[row * gridCols + col];
     }
 
-    function fillTriangle(a, b, c) {
-        ctx.beginPath();
+    function addTrianglePath(a, b, c) {
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
         ctx.lineTo(c.x, c.y);
         ctx.closePath();
-        ctx.fill();
     }
 
     function isOverEducation() {
@@ -646,22 +644,16 @@ scrollTopBtn.addEventListener('mouseleave', () => {
         const my = mouse.y;
         const centerCol = Math.floor((mx - gridOffsetX) / spacing);
         const centerRow = Math.floor((my - gridOffsetY) / spacing);
-        // Only cells near the cursor (tight glow)
         const cellReach = 1;
 
-        // Light hugs the cursor — covers ~half a triangle at cell center
-        const glass = ctx.createRadialGradient(mx, my, 0, mx, my, lightRadius);
-        glass.addColorStop(0, 'rgba(210, 220, 230, 0.34)');
-        glass.addColorStop(0.45, 'rgba(160, 170, 180, 0.14)');
-        glass.addColorStop(0.8, 'rgba(120, 130, 140, 0.04)');
-        glass.addColorStop(1, 'rgba(120, 130, 140, 0)');
-        ctx.fillStyle = glass;
+        // Build one clip path for all lit triangles (avoids bright white edge seams)
+        ctx.beginPath();
+        let hasShape = false;
 
         for (let row = centerRow - cellReach; row <= centerRow + cellReach; row++) {
             for (let col = centerCol - cellReach; col <= centerCol + cellReach; col++) {
                 if (col < 0 || row < 0 || col >= gridCols - 1 || row >= gridRows - 1) continue;
 
-                // Use live blue-dot positions (warped by cursor pull)
                 const tl = pointAt(col, row);
                 const tr = pointAt(col + 1, row);
                 const bl = pointAt(col, row + 1);
@@ -673,18 +665,31 @@ scrollTopBtn.addEventListener('mouseleave', () => {
 
                 if (Math.hypot(mx - mid.x, my - mid.y) > lightRadius + spacing * 0.35) continue;
 
-                // Alternate pair: neighbors get the other orientation
                 const useHorizontal = ((col + row) % 2 === 0);
-
                 if (useHorizontal) {
-                    fillTriangle(tl, bl, mid); // left
-                    fillTriangle(tr, br, mid); // right
+                    addTrianglePath(tl, bl, mid);
+                    addTrianglePath(tr, br, mid);
                 } else {
-                    fillTriangle(tl, tr, mid); // top
-                    fillTriangle(bl, br, mid); // bottom
+                    addTrianglePath(tl, tr, mid);
+                    addTrianglePath(bl, br, mid);
                 }
+                hasShape = true;
             }
         }
+
+        if (!hasShape) return;
+
+        // Soft glass glow — no strokes, single fill (no white outlines)
+        const glass = ctx.createRadialGradient(mx, my, 0, mx, my, lightRadius);
+        glass.addColorStop(0, 'rgba(200, 210, 220, 0.28)');
+        glass.addColorStop(0.5, 'rgba(150, 160, 170, 0.1)');
+        glass.addColorStop(1, 'rgba(120, 130, 140, 0)');
+
+        ctx.save();
+        ctx.clip();
+        ctx.fillStyle = glass;
+        ctx.fillRect(mx - lightRadius, my - lightRadius, lightRadius * 2, lightRadius * 2);
+        ctx.restore();
     }
 
     function draw() {
