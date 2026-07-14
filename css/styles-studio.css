@@ -664,6 +664,7 @@ body.studio .footer {
     object-fit: cover;
     display: block;
     opacity: 1;
+    filter: brightness(0.72) contrast(1.05);
 }
 
 body.studio .image-border {
@@ -675,6 +676,7 @@ body.studio .about-image .profile-photo {
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
+    filter: brightness(0.72) contrast(1.05);
 }
 
 body.studio .about-image .image-wrapper {
