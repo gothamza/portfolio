@@ -21,20 +21,21 @@ Ce portfolio présente mon parcours académique, mes expériences professionnell
 
 ```
 portfolio/
-│
-├── index.html          # Page principale HTML
-├── styles.css          # Styles CSS avec animations
-├── script.js           # JavaScript pour interactions et langue
-├── README.md           # Documentation
-│
-└── images/             # Dossier contenant toutes les images
-    ├── profile-photo.jpg
-    ├── master-image.jpeg (1-4)
-    ├── Hackathon ThinkAI.jpg
-    ├── Hackathon DyslexAI.jpeg
-    ├── clube1.jpeg et autres images club
-    └── SPORTS3.jpg
+├── index.html              # Site live (reste à la racine pour GitHub Pages)
+├── css/
+│   └── styles-studio.css   # Styles HUD studio
+├── js/
+│   └── script-studio.js    # Interactions, i18n, canvas
+├── images/                 # Photos, icônes, OG
+├── PDFs/                   # CVs et démos téléchargeables
+├── docs/                   # Guides
+├── cv-source/              # Sources LaTeX du CV
+├── legacy/                 # Anciennes versions (non utilisées en live)
+├── README.md
+└── README.fr.md
 ```
+
+GitHub Pages sert depuis la racine du dépôt. Des chemins relatifs comme `css/styles-studio.css` fonctionnent sans problème.
 
 ## 🖼️ Images à Ajouter
 
