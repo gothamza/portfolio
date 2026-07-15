@@ -13,9 +13,17 @@ This portfolio showcases my academic background, professional experiences, techn
 - 🎯 **Intuitive Navigation** - Sticky menu with smooth scrolling
 - 🔗 **Direct Links** - To GitHub, LinkedIn and projects
 
-## 🏠 Homepage Preview
+## 🏠 Preview
 
-![Home Page Screenshot](images/homescreanshot.jpeg)
+![Portfolio preview](images/og-preview.png)
+
+**Live site:** [gothamza.github.io/portfolio](https://gothamza.github.io/portfolio/)
+
+### QR code
+
+Scan to open the portfolio on your phone:
+
+![QR code — gothamza.github.io](images/qrcode_gothamza.github.io.png)
 
 ## 📂 Project Structure
 
