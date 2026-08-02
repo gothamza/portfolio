@@ -12,6 +12,8 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{graphicx}
+\usepackage{tikz}
 
 % ── Colors (aligned with portfolio HUD) ─────────────────────────────────────
 \definecolor{accent}{HTML}{0891B2}
@@ -25,7 +27,7 @@
     linkcolor=accent
 }
 
-% ── Typography & layout ─────────────────────────────────────────────────────
+% ── Typography \& layout ─────────────────────────────────────────────────────
 \pagestyle{empty}
 \setlength{\parskip}{0pt}
 \setlength{\parindent}{0pt}
@@ -45,18 +47,35 @@
 }
 
 % ── Helpers ─────────────────────────────────────────────────────────────────
-\newcommand{\cvname}[1]{{\Huge\bfseries\color{ink}#1}}
-\newcommand{\cvtitle}[1]{{\large\color{muted}#1}}
+\newcommand{\cvname}[1]{{\LARGE\bfseries\color{ink}#1}}
+\newcommand{\cvtitle}[1]{{\normalsize\color{muted}#1}}
 \newcommand{\cvmeta}[1]{{\footnotesize\color{muted}#1}}
 \newcommand{\role}[2]{\textbf{#1}\hfill\textit{\color{muted}#2}\\}
 \newcommand{\org}[1]{\textit{#1}\\[0.5pt]}
+
+% Circular profile photo (Overleaf: keep profile-photo.jpg next to this .tex)
+\newcommand{\profilephoto}{%
+    \begin{tikzpicture}
+        \clip (0,0) circle (1.15cm);
+        \node[anchor=center] at (0,0) {%
+            \includegraphics[width=2.3cm]{profile-photo.jpg}%
+        };
+        \draw[accent, line width=1.2pt] (0,0) circle (1.15cm);
+    \end{tikzpicture}%
+}
 
 \begin{document}
 \normalsize
 \setlength{\tabcolsep}{0pt}
 
-% ── Header ──────────────────────────────────────────────────────────────────
-\begin{center}
+% ── Header with photo ───────────────────────────────────────────────────────
+\noindent
+\begin{minipage}[c]{0.17\textwidth}
+    \centering
+    \profilephoto
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.80\textwidth}
     \cvname{Hamza Bouktitiya}\\[2pt]
     \cvtitle{Artificial Intelligence Engineer \textbullet\ PhD Candidate}\\[4pt]
     \cvmeta{%
@@ -73,9 +92,9 @@
         \quad\textbullet\quad
         \faGlobe*\ \href{https://gothamza.github.io/portfolio/}{Portfolio}
     }
-\end{center}
+\end{minipage}
 
-\vspace{1pt}
+\vspace{2pt}
 {\footnotesize\color{ink}
 AI engineer and PhD candidate building production LLM systems (RAG, agents, APIs) with FastAPI, LangChain/LangGraph, and Docker. Experience spanning NLP, computer vision, and full-stack deployment.}
 
@@ -143,7 +162,7 @@ Data        & Pandas, NumPy, Power BI, TF-IDF, classical ML (SVM, KNN) \\
     \item \textbf{License Plate Recognition} (2023) --- HOG features with KNN/SVM character classifiers; \textbf{98.9\%} test accuracy.
 \end{itemize}
 
-% ── Languages & Activities ──────────────────────────────────────────────────
+% ── Languages \& Activities ──────────────────────────────────────────────────
 \section*{Languages \& Activities}
 \textbf{Languages:} Arabic (Native) \textbullet\ English (C1) \textbullet\ French (B2)\\[2pt]
 \textbf{Activities:} DyslexAI Hackathon --- Top~3 (Al Akhawayn University) \textbullet\
