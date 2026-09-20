@@ -12,6 +12,8 @@
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{array}
+\usepackage{graphicx}
+\usepackage{tikz}
 
 % ── Couleurs (alignées au portfolio HUD) ────────────────────────────────────
 \definecolor{accent}{HTML}{0891B2}
@@ -45,18 +47,35 @@
 }
 
 % ── Helpers ─────────────────────────────────────────────────────────────────
-\newcommand{\cvname}[1]{{\Huge\bfseries\color{ink}#1}}
-\newcommand{\cvtitle}[1]{{\large\color{muted}#1}}
+\newcommand{\cvname}[1]{{\LARGE\bfseries\color{ink}#1}}
+\newcommand{\cvtitle}[1]{{\normalsize\color{muted}#1}}
 \newcommand{\cvmeta}[1]{{\footnotesize\color{muted}#1}}
 \newcommand{\role}[2]{\textbf{#1}\hfill\textit{\color{muted}#2}\\}
 \newcommand{\org}[1]{\textit{#1}\\[0.5pt]}
+
+% Photo de profil circulaire (Overleaf : garder profile-photo.jpg à côté de ce .tex)
+\newcommand{\profilephoto}{%
+    \begin{tikzpicture}
+        \clip (0,0) circle (1.15cm);
+        \node[anchor=center] at (0,0) {%
+            \includegraphics[width=2.3cm]{profile-photo.jpg}%
+        };
+        \draw[accent, line width=1.2pt] (0,0) circle (1.15cm);
+    \end{tikzpicture}%
+}
 
 \begin{document}
 \normalsize
 \setlength{\tabcolsep}{0pt}
 
-% ── En-tête ─────────────────────────────────────────────────────────────────
-\begin{center}
+% ── En-tête avec photo ──────────────────────────────────────────────────────
+\noindent
+\begin{minipage}[c]{0.17\textwidth}
+    \centering
+    \profilephoto
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.80\textwidth}
     \cvname{Hamza Bouktitiya}\\[2pt]
     \cvtitle{Ingénieur en Intelligence Artificielle \textbullet\ Doctorant}\\[4pt]
     \cvmeta{%
@@ -73,9 +92,9 @@
         \quad\textbullet\quad
         \faGlobe*\ \href{https://gothamza.github.io/portfolio/}{Portfolio}
     }
-\end{center}
+\end{minipage}
 
-\vspace{1pt}
+\vspace{2pt}
 {\footnotesize\color{ink}
 Ingénieur IA et doctorant, je conçois des systèmes LLM en production (RAG, agents, APIs) avec FastAPI, LangChain/LangGraph et Docker. Expérience en NLP, vision par ordinateur et déploiement full-stack.}
 
@@ -100,16 +119,14 @@ Ingénieur IA et doctorant, je conçois des systèmes LLM en production (RAG, ag
 % ── Expérience ──────────────────────────────────────────────────────────────
 \section*{Expérience Professionnelle}
 \begin{itemize}
-    \item \role{Consultant en IA}{Avril 2025 -- Présent}
+    \item \role{Ingénieur Junior en IA}{Avril 2025 -- Octobre 2025}
           \org{OBYSTECH SOLUTIONS, Rabat}
-          Conseil aux entreprises sur l'adoption de l'IA et livraison de solutions de bout en bout (machine learning, deep learning, NLP), notamment des assistants intégrés aux ERP tels qu'Odoo.
+          Conception et mise en production d'une plateforme d'agents IA multi-départements (RH, Finance, Management, IT) en projet solo.
           \begin{itemize}
-              \item Identifier les cas d'usage IA à fort impact (CRM, ventes, inventaire, RH) et prototyper des solutions NLP / ML branchées sur Odoo et d'autres processus métier.
-              \item Conception et mise en production d'une plateforme d'agents IA multi-départements (RH, Finance, Management, IT) en projet solo.
               \item Front-end multi-chat Next.js avec sélecteur de collection, bascule RAG par conversation, espaces d'équipe et pagination par curseur.
               \item Pipeline RAG (ingestion PDF/docs, embeddings Hugging Face, recherche hybride/vectorielle avec MMR) et workflows LangGraph avec mémoire PostgreSQL ; MCP pour outils externes.
               \item Déploiement Docker Compose multi-services sur VPS avec proxy inverse, SSL et redémarrages sans interruption.
-              \item \textbf{Stack :} Next.js, FastAPI, LangChain, LangGraph, MCP, Ollama, Odoo, PyTorch, NLP, PostgreSQL, ChromaDB, Docker, JWT/OAuth2.
+              \item \textbf{Stack :} Next.js, FastAPI, LangChain, LangGraph, MCP, Ollama, PostgreSQL, ChromaDB, Docker, JWT/OAuth2.
           \end{itemize}
 
     \item \role{Stagiaire en IA}{Février 2024 -- Août 2024}
