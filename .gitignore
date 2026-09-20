@@ -1,3 +1,16 @@
+# Ignore mcp-playwright artifacts
+mcp-playwright/node_modules/
+mcp-playwright/mcp-screenshot.png
+mcp-playwright/package-lock.json
+mcp-playwright/*.log
+mcp-playwright/.env
+
+# Ignore VS Code task output (optional)
+.vscode/tasks.json
+
+# OS files
+.DS_Store
+Thumbs.db
 # Operating System Files
 .DS_Store
 .DS_Store?
