@@ -36,12 +36,12 @@
 \titleformat{\section}
   {\large\bfseries\color{accent}}
   {}{0em}{}[\vspace{1pt}{\color{accent}\titlerule}]
-\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
 
 \setlist[itemize]{
     leftmargin=1.1em,
-    topsep=0.5pt,
-    itemsep=1.0pt,
+    topsep=0.3pt,
+    itemsep=0.5pt,
     parsep=0pt,
     label=\textcolor{accent}{\textbullet}
 }
@@ -56,11 +56,11 @@
 % Circular profile photo (Overleaf: keep profile-photo.jpg next to this .tex)
 \newcommand{\profilephoto}{%
     \begin{tikzpicture}
-        \clip (0,0) circle (1.15cm);
+        \clip (0,0) circle (1.0cm);
         \node[anchor=center] at (0,0) {%
-            \includegraphics[width=2.3cm]{profile-photo.jpg}%
+            \includegraphics[width=2.0cm]{profile-photo.jpg}%
         };
-        \draw[accent, line width=1.2pt] (0,0) circle (1.15cm);
+        \draw[accent, line width=1.2pt] (0,0) circle (1.0cm);
     \end{tikzpicture}%
 }
 
@@ -121,13 +121,12 @@ AI engineer and PhD candidate building production LLM systems (RAG, agents, APIs
 \begin{itemize}
     \item \role{AI Consultant}{April 2025 -- Present}
           \org{OBYSTECH SOLUTIONS, Rabat}
-          Advise enterprise clients on AI adoption and deliver end-to-end solutions spanning machine learning, deep learning, and NLP --- including assistants integrated with ERP systems such as Odoo.
+          Advise enterprises on AI adoption (ML, deep learning, NLP) and ERP integrations such as Odoo; shipped a multi-department AI agent platform solo.
           \begin{itemize}
-              \item Identify high-impact AI use cases across business processes (CRM, sales, inventory, HR) and prototype NLP / ML solutions wired into Odoo and other enterprise workflows.
-              \item Designed and shipped a multi-department AI agent platform (HR, Finance, Management, IT) as a solo project.
-              \item Built a multi-chat Next.js front end with collection selector, per-chat RAG toggle, team workspaces, and cursor-based pagination.
-              \item Implemented a RAG pipeline (PDF/docs ingestion, Hugging Face embeddings, hybrid/vector search with MMR) and LangGraph workflows with PostgreSQL-backed memory; MCP for external tools.
-              \item Deployed a multi-service Docker Compose stack on VPS with reverse proxy, SSL, and zero-downtime restarts.
+              \item Identify AI use cases across CRM, sales, inventory, and HR; prototype NLP/ML solutions wired into Odoo and enterprise workflows.
+              \item Built Next.js multi-chat UI (RAG toggle, team workspaces) and FastAPI/LangGraph RAG pipeline (HF embeddings, hybrid search, MCP tools, PostgreSQL memory).
+              \item Secured LLM APIs (chat, RAG, image generation) with typed schemas, JWT/OAuth2, and role-based access for users and collections.
+              \item Deployed multi-service Docker Compose on VPS (reverse proxy, SSL, zero-downtime).
               \item \textbf{Stack:} Next.js, FastAPI, LangChain, LangGraph, MCP, Ollama, Odoo, PyTorch, NLP, PostgreSQL, ChromaDB, Docker, JWT/OAuth2.
           \end{itemize}
 
@@ -135,8 +134,7 @@ AI engineer and PhD candidate building production LLM systems (RAG, agents, APIs
           \org{Verve Technologie, Casablanca}
           \begin{itemize}
               \item Built an LSTM forecasting system for energy consumption prediction.
-              \item Exposed Stable Diffusion~1.5 image-generation endpoints and a RAG pipeline over Wikipedia/PDF sources.
-              \item Added JWT authentication and user management on FastAPI.
+              \item Exposed Stable Diffusion~1.5 image-generation endpoints and a RAG pipeline over Wikipedia/PDF; FastAPI with JWT auth.
               \item \textbf{Stack:} LSTM, LangChain, FastAPI, Stable Diffusion, JWT.
           \end{itemize}
 
@@ -158,10 +156,10 @@ Data        & Pandas, NumPy, Power BI, TF-IDF, classical ML (SVM, KNN) \\
 % ── Projects ────────────────────────────────────────────────────────────────
 \section*{Selected Projects}
 \begin{itemize}
-    \item \textbf{Intelligent Assessment System} (2026) --- LLM/RAG platform for exam generation, answer evaluation, and personalized feedback (BLEU, ROUGE, BERTScore); FastAPI, Streamlit, LangChain, Docker.
-    \item \textbf{Computer Vision Playground} (2025) --- Dockerized Streamlit app for MTCNN face detection, LBPH recognition, YOLOv8 object detection, and MediaPipe pose estimation.
-    \item \textbf{Darija Q\&A System} (2023) --- Bilingual Moroccan Darija/English QA with Transformer QA, Seq2Seq, and LSTM translation models.
-    \item \textbf{License Plate Recognition} (2023) --- HOG features with KNN/SVM character classifiers; \textbf{98.9\%} test accuracy.
+    \item \textbf{Intelligent Assessment System} (2026) --- LLM/RAG exam generation, evaluation, and feedback (BLEU, ROUGE, BERTScore); FastAPI, Streamlit, LangChain, Docker.
+    \item \textbf{Computer Vision Playground} (2025) --- Streamlit/Docker: MTCNN, LBPH, YOLOv8, MediaPipe pose.
+    \item \textbf{Darija Q\&A} (2023) --- Darija/English QA with Transformer, Seq2Seq, and LSTM translation.
+    \item \textbf{License Plate Recognition} (2023) --- HOG + KNN/SVM; \textbf{98.9\%} test accuracy.
 \end{itemize}
 
 % ── Languages \& Activities ──────────────────────────────────────────────────

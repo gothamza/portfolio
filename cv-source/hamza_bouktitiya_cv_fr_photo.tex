@@ -36,12 +36,12 @@
 \titleformat{\section}
   {\large\bfseries\color{accent}}
   {}{0em}{}[\vspace{1pt}{\color{accent}\titlerule}]
-\titlespacing*{\section}{0pt}{5pt}{2.5pt}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
 
 \setlist[itemize]{
     leftmargin=1.1em,
-    topsep=0.5pt,
-    itemsep=1.0pt,
+    topsep=0.3pt,
+    itemsep=0.5pt,
     parsep=0pt,
     label=\textcolor{accent}{\textbullet}
 }
@@ -56,11 +56,11 @@
 % Photo de profil circulaire (Overleaf : garder profile-photo.jpg à côté de ce .tex)
 \newcommand{\profilephoto}{%
     \begin{tikzpicture}
-        \clip (0,0) circle (1.15cm);
+        \clip (0,0) circle (1.0cm);
         \node[anchor=center] at (0,0) {%
-            \includegraphics[width=2.3cm]{profile-photo.jpg}%
+            \includegraphics[width=2.0cm]{profile-photo.jpg}%
         };
-        \draw[accent, line width=1.2pt] (0,0) circle (1.15cm);
+        \draw[accent, line width=1.2pt] (0,0) circle (1.0cm);
     \end{tikzpicture}%
 }
 
@@ -121,13 +121,12 @@ Ingénieur IA et doctorant, je conçois des systèmes LLM en production (RAG, ag
 \begin{itemize}
     \item \role{Consultant en IA}{Avril 2025 -- Présent}
           \org{OBYSTECH SOLUTIONS, Rabat}
-          Conseil aux entreprises sur l'adoption de l'IA et livraison de solutions de bout en bout (machine learning, deep learning, NLP), notamment des assistants intégrés aux ERP tels qu'Odoo.
+          Conseil IA en entreprise (ML, deep learning, NLP) et intégrations ERP (Odoo) ; plateforme d'agents IA multi-départements livrée en solo.
           \begin{itemize}
-              \item Identifier les cas d'usage IA à fort impact (CRM, ventes, inventaire, RH) et prototyper des solutions NLP / ML branchées sur Odoo et d'autres processus métier.
-              \item Conception et mise en production d'une plateforme d'agents IA multi-départements (RH, Finance, Management, IT) en projet solo.
-              \item Front-end multi-chat Next.js avec sélecteur de collection, bascule RAG par conversation, espaces d'équipe et pagination par curseur.
-              \item Pipeline RAG (ingestion PDF/docs, embeddings Hugging Face, recherche hybride/vectorielle avec MMR) et workflows LangGraph avec mémoire PostgreSQL ; MCP pour outils externes.
-              \item Déploiement Docker Compose multi-services sur VPS avec proxy inverse, SSL et redémarrages sans interruption.
+              \item Cas d'usage IA (CRM, ventes, inventaire, RH) ; prototypes NLP/ML branchés sur Odoo et processus métier.
+              \item UI multi-chat Next.js (RAG, espaces d'équipe) et pipeline RAG FastAPI/LangGraph (embeddings HF, recherche hybride, MCP, mémoire PostgreSQL).
+              \item Sécurisation des API LLM (chat, RAG, génération d'images) : schémas typés, JWT/OAuth2 et contrôle d'accès par rôles.
+              \item Déploiement Docker Compose multi-services sur VPS (proxy inverse, SSL, zero-downtime).
               \item \textbf{Stack :} Next.js, FastAPI, LangChain, LangGraph, MCP, Ollama, Odoo, PyTorch, NLP, PostgreSQL, ChromaDB, Docker, JWT/OAuth2.
           \end{itemize}
 
@@ -135,8 +134,7 @@ Ingénieur IA et doctorant, je conçois des systèmes LLM en production (RAG, ag
           \org{Verve Technologie, Casablanca}
           \begin{itemize}
               \item Système de prévision LSTM pour la consommation énergétique.
-              \item Endpoints de génération d'images Stable Diffusion~1.5 et pipeline RAG sur sources Wikipédia/PDF.
-              \item Authentification JWT et gestion des utilisateurs sur FastAPI.
+              \item Endpoints Stable Diffusion~1.5, pipeline RAG Wikipédia/PDF, et authentification JWT sur FastAPI.
               \item \textbf{Stack :} LSTM, LangChain, FastAPI, Stable Diffusion, JWT.
           \end{itemize}
 
@@ -158,10 +156,10 @@ Données     & Pandas, NumPy, Power BI, TF-IDF, ML classique (SVM, KNN) \\
 % ── Projets ─────────────────────────────────────────────────────────────────
 \section*{Projets Sélectionnés}
 \begin{itemize}
-    \item \textbf{Système Intelligent d'Évaluation} (2026) --- Plateforme LLM/RAG pour génération d'examens, évaluation et feedback personnalisé (BLEU, ROUGE, BERTScore) ; FastAPI, Streamlit, LangChain, Docker.
-    \item \textbf{Computer Vision Playground} (2025) --- Application Streamlit conteneurisée : détection MTCNN, reconnaissance LBPH, détection YOLOv8 et estimation de pose MediaPipe.
-    \item \textbf{Système QA en Darija} (2023) --- QA bilingue darija marocain/anglais avec Transformer QA, Seq2Seq et modèles de traduction LSTM.
-    \item \textbf{Reconnaissance de Plaques} (2023) --- Caractéristiques HOG et classifieurs KNN/SVM ; précision de test de \textbf{98,9\,\%}.
+    \item \textbf{Système Intelligent d'Évaluation} (2026) --- LLM/RAG examens, évaluation et feedback (BLEU, ROUGE, BERTScore) ; FastAPI, Streamlit, LangChain, Docker.
+    \item \textbf{Computer Vision Playground} (2025) --- Streamlit/Docker : MTCNN, LBPH, YOLOv8, MediaPipe.
+    \item \textbf{QA Darija} (2023) --- QA darija/anglais avec Transformer, Seq2Seq et LSTM.
+    \item \textbf{Reconnaissance de Plaques} (2023) --- HOG + KNN/SVM ; \textbf{98,9\,\%} en test.
 \end{itemize}
 
 % ── Langues \& Activités ────────────────────────────────────────────────────
