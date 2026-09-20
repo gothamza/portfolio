@@ -173,23 +173,16 @@ langButtons.forEach(button => {
 });
 
 // ==========================================
-// MOBILE MENU TOGGLE + MORE DROPDOWN
+// MOBILE MENU TOGGLE
 // ==========================================
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-const navMoreBtn = document.getElementById('nav-more-btn');
-const navMoreMenu = document.getElementById('nav-more-menu');
 
 function closeNavMenus() {
     if (navMenu) navMenu.classList.remove('active');
     if (hamburger) {
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
-    }
-    if (navMoreBtn && navMoreMenu) {
-        navMoreBtn.classList.remove('open');
-        navMoreBtn.setAttribute('aria-expanded', 'false');
-        navMoreMenu.classList.remove('open');
     }
 }
 
@@ -198,32 +191,10 @@ if (hamburger && navMenu) {
         const isOpen = navMenu.classList.toggle('active');
         hamburger.classList.toggle('active', isOpen);
         hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        if (navMoreBtn && navMoreMenu) {
-            navMoreBtn.classList.remove('open');
-            navMoreBtn.setAttribute('aria-expanded', 'false');
-            navMoreMenu.classList.remove('open');
-        }
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', closeNavMenus);
-    });
-}
-
-if (navMoreBtn && navMoreMenu) {
-    navMoreBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = navMoreMenu.classList.toggle('open');
-        navMoreBtn.classList.toggle('open', isOpen);
-        navMoreBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!navMoreBtn.contains(e.target) && !navMoreMenu.contains(e.target)) {
-            navMoreBtn.classList.remove('open');
-            navMoreBtn.setAttribute('aria-expanded', 'false');
-            navMoreMenu.classList.remove('open');
-        }
     });
 }
 
