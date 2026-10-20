@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamza Bouktitiya — Présentation entretien (FR)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #000000;
+      --panel: rgba(0, 243, 255, 0.04);
+      --cyan: #00f3ff;
+      --green: #00ff66;
+      --text: #e8f7fa;
+      --muted: #7a9aa3;
+      --border: rgba(0, 243, 255, 0.28);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      overflow: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0, 243, 255, 0.08), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 100%, rgba(0, 255, 102, 0.05), transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .deck { position: relative; z-index: 1; height: 100%; }
+    .slide {
+      display: none;
+      height: 100%;
+      padding: clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 5vw, 4rem);
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .slide.active { display: flex; animation: in 0.35s ease; }
+    @keyframes in {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+    .eyebrow {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    h2 span { color: var(--cyan); }
+    .lead {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--muted);
+      max-width: 42rem;
+      line-height: 1.55;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      box-shadow: 0 0 24px rgba(0, 243, 255, 0.06);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 720px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    ul.bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    ul.bullets li {
+      position: relative;
+      padding-left: 1.15rem;
+      line-height: 1.45;
+      font-size: 1.05rem;
+    }
+    ul.bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.75rem; }
+    .tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      padding: 0.35rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--cyan);
+    }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .role { color: var(--green); font-weight: 600; }
+    .notes {
+      margin-top: 1.25rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed rgba(0, 243, 255, 0.2);
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .notes strong { color: var(--cyan); font-weight: 600; }
+    .notes.hidden { display: none; }
+    .hud-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(0, 0, 0, 0.85);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .hud-bar button {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hud-bar button:hover { background: rgba(0, 243, 255, 0.1); }
+    .hud-actions { display: flex; gap: 0.5rem; align-items: center; }
+    a.lang-link {
+      color: var(--green);
+      text-decoration: none;
+    }
+    a.lang-link:hover { text-decoration: underline; }
+    .progress {
+      flex: 1;
+      height: 3px;
+      background: rgba(0, 243, 255, 0.12);
+      border-radius: 2px;
+      overflow: hidden;
+      max-width: 220px;
+    }
+    .progress > span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      width: 0%;
+      transition: width 0.25s ease;
+    }
+    .contact-row { margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem 1.75rem; }
+    .contact-row a { color: var(--cyan); text-decoration: none; }
+    .contact-row a:hover { color: var(--green); }
+    .quote {
+      font-size: 1.15rem;
+      border-left: 3px solid var(--cyan);
+      padding-left: 1rem;
+      line-height: 1.5;
+      max-width: 36rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+
+    <section class="slide active" data-notes="Bonjour, je m'appelle Hamza Bouktitiya. Je suis ingénieur en intelligence artificielle, basé à Kénitra. Je vais vous présenter mon parcours, mon expérience et ce que je peux apporter à votre équipe.">
+      <p class="eyebrow">Présentation entretien · ~6–8 min</p>
+      <h1>Hamza Bouktitiya</h1>
+      <p class="lead">Ingénieur en Intelligence Artificielle — systèmes LLM en production, agents RAG et produits IA full-stack.</p>
+      <div class="contact-row">
+        <span>Kénitra, Maroc</span>
+        <span>AR · EN · FR</span>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Je construis de l'IA qui va jusqu'en production : pas seulement des modèles, mais des APIs, des interfaces, la sécurité et le déploiement. J'aime porter le projet de bout en bout.">
+      <p class="eyebrow">01 — À propos</p>
+      <h2>Qui je <span>suis</span></h2>
+      <p class="quote">Je transforme l'IA en produits utilisables : RAG, agents, APIs et interfaces claires — avec Docker et un vrai déploiement.</p>
+      <div class="grid-2" style="margin-top:1.5rem;">
+        <div class="panel">
+          <ul class="bullets">
+            <li>Focus : LLMs, NLP, RAG, workflows d'agents</li>
+            <li>Aussi : vision par ordinateur & ML classique</li>
+            <li>Livraison full-stack (Next.js + FastAPI)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <ul class="bullets">
+            <li>Autonomie de bout en bout</li>
+            <li>Contexte entreprise / ERP (Odoo)</li>
+            <li>Posture conseil client</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="J'ai un Master en IA et Réalité Virtuelle et une Licence en Sciences Mathématiques et Informatique à l'Université Ibn Tofail.">
+      <p class="eyebrow">02 — Formation</p>
+      <h2>Parcours <span>académique</span></h2>
+      <div class="panel" style="margin-bottom:1rem;">
+        <p class="role">Master — Intelligence Artificielle & Réalité Virtuelle</p>
+        <p class="meta">2022 – 2024 · Université Ibn Tofail, Kénitra</p>
+      </div>
+      <div class="panel" style="margin-bottom:1rem;">
+        <p class="role">Licence — Sciences Mathématiques & Informatique</p>
+        <p class="meta">2018 – 2022 · Université Ibn Tofail, Kénitra</p>
+      </div>
+      <div class="panel">
+        <p class="role">Baccalauréat — Sciences Mathématiques</p>
+        <p class="meta">2017 – 2018 · Lycée Sidi Aissa</p>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Chez Obystech, j'ai travaillé comme développeur IA. J'aidais les entreprises à trouver où l'IA crée de la valeur, notamment avec des ERP comme Odoo, et je construisais aussi les solutions.">
+      <p class="eyebrow">03 — Expérience · récente</p>
+      <h2>Développeur IA — <span>Obystech</span></h2>
+      <p class="meta">Avril 2025 – Octobre 2026 · Rabat</p>
+      <ul class="bullets">
+        <li>Conseil en adoption de l'IA : ML, deep learning, NLP</li>
+        <li>Cas d'usage : CRM, ventes, inventaire, RH</li>
+        <li>Prototypes NLP/ML intégrés à <strong>Odoo ERP</strong></li>
+        <li>Assistants NLP pour déclencher des actions ERP en langage naturel</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Conseil</span>
+        <span class="tag">Odoo</span>
+        <span class="tag">NLP</span>
+        <span class="tag">IA entreprise</span>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Ma livraison phare : une plateforme d'agents IA multi-départements construite en solo — front Next.js, back FastAPI/LangGraph, RAG, sécurité, et déploiement Docker sur VPS.">
+      <p class="eyebrow">03b — Livraison phare</p>
+      <h2>Plateforme IA <span>multi-départements</span></h2>
+      <p class="meta">Projet solo · RH · Finance · Management · IT</p>
+      <div class="grid-2">
+        <div class="panel">
+          <ul class="bullets">
+            <li>UI multi-chat Next.js, bascule RAG, espaces d'équipe</li>
+            <li>Pipeline RAG FastAPI + LangGraph (embeddings HF, MCP)</li>
+            <li>Mémoire PostgreSQL · ChromaDB</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <ul class="bullets">
+            <li>JWT/OAuth2 + contrôle d'accès par rôles</li>
+            <li>Stack Docker Compose multi-services</li>
+            <li>VPS : proxy inverse, SSL, zero-downtime</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Docker</span>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Avant cela, chez Verve : prévision énergétique LSTM, génération d'images Stable Diffusion, et RAG avec authentification FastAPI.">
+      <p class="eyebrow">04 — Expériences précédentes</p>
+      <h2>Vers l'IA en <span>production</span></h2>
+      <div class="panel" style="margin-bottom:1rem;">
+        <p class="role">Stagiaire IA — Verve Technologie, Casablanca</p>
+        <p class="meta">Fév. 2024 – Août 2024</p>
+        <ul class="bullets" style="margin-top:0.6rem;">
+          <li>Prévision de consommation énergétique (LSTM)</li>
+          <li>Endpoints Stable Diffusion 1.5 + RAG Wikipédia/PDF</li>
+          <li>Auth JWT et gestion utilisateurs FastAPI</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <p class="role">Stagiaire web — Université Ibn Tofail</p>
+        <p class="meta">Mars 2022 – Juin 2022 · App gestion salle de sport (PHP, JS, MySQL)</p>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Quelques projets qui montrent la diversité : évaluation LLM, vision, QA en darija, et un site client trilingue.">
+      <p class="eyebrow">05 — Projets sélectionnés</p>
+      <h2>Des projets qui <span>parlent</span></h2>
+      <div class="grid-2">
+        <div class="panel">
+          <p class="role">Système Intelligent d'Évaluation</p>
+          <p class="meta">Examens LLM/RAG, feedback · BLEU/ROUGE/BERTScore</p>
+        </div>
+        <div class="panel">
+          <p class="role">Computer Vision Playground</p>
+          <p class="meta">MTCNN, LBPH, YOLOv8, MediaPipe · Streamlit + Docker</p>
+        </div>
+        <div class="panel">
+          <p class="role">QA Darija</p>
+          <p class="meta">Darija / anglais · Transformers & LSTM</p>
+        </div>
+        <div class="panel">
+          <p class="role">Centre Souifi (en cours)</p>
+          <p class="meta">Site marketing trilingue · AR/FR/EN · RTL · GitHub Pages</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Ma stack couvre l'IA, le MLOps et le web moderne. Je suis à l'aise côté modèle et côté produit.">
+      <p class="eyebrow">06 — Compétences</p>
+      <h2>Boîte à <span>outils</span></h2>
+      <div class="grid-2">
+        <div class="panel">
+          <p class="role">IA / ML</p>
+          <div class="tags">
+            <span class="tag">PyTorch</span><span class="tag">LangChain</span><span class="tag">LangGraph</span>
+            <span class="tag">RAG</span><span class="tag">NLP</span><span class="tag">Vision</span>
+          </div>
+        </div>
+        <div class="panel">
+          <p class="role">Back-end & données</p>
+          <div class="tags">
+            <span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">PostgreSQL</span>
+            <span class="tag">JWT</span><span class="tag">Pandas</span>
+          </div>
+        </div>
+        <div class="panel">
+          <p class="role">Front-end</p>
+          <div class="tags">
+            <span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span>
+            <span class="tag">Tailwind</span>
+          </div>
+        </div>
+        <div class="panel">
+          <p class="role">Ops</p>
+          <div class="tags">
+            <span class="tag">Docker</span><span class="tag">Nginx</span><span class="tag">VPS</span><span class="tag">Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Au-delà du code : hackathons, club, conférences. Je communique en arabe, anglais et français.">
+      <p class="eyebrow">07 — Au-delà du code</p>
+      <h2>Communauté & <span>langues</span></h2>
+      <ul class="bullets">
+        <li><strong>Hackathon DyslexAI</strong> — Top 3 (Université Al Akhawayn)</li>
+        <li><strong>Hackathon ThinkAI</strong> — École 1337</li>
+        <li>Co-fondateur — club Pragnomos</li>
+        <li>Présentation ML — événement Agora</li>
+      </ul>
+      <div class="panel" style="margin-top:1.25rem;">
+        <p><strong style="color:var(--cyan)">Langues :</strong> Arabe (maternelle) · Anglais (C1) · Français (B2)</p>
+      </div>
+    </section>
+
+    <section class="slide" data-notes="Je cherche un poste où construire des produits IA de bout en bout, apprendre avec une équipe solide, et créer un impact métier réel. Merci, je suis ouvert à vos questions.">
+      <p class="eyebrow">08 — Clôture</p>
+      <h2>Ce que je <span>recherche</span></h2>
+      <ul class="bullets">
+        <li>Postes en ingénierie IA, produits LLM/RAG ou NLP appliqué</li>
+        <li>Équipes qui livrent en production (UX + fiabilité)</li>
+        <li>Environnement où grandir en portant des sujets concrets</li>
+      </ul>
+      <p class="lead" style="margin-top:1.5rem;">Merci — je suis à votre disposition pour les questions.</p>
+      <div class="contact-row">
+        <a href="mailto:bouktitiya.hamza.post@gmail.com">bouktitiya.hamza.post@gmail.com</a>
+        <a href="https://gothamza.github.io/portfolio/" target="_blank" rel="noopener">Portfolio</a>
+        <a href="https://github.com/gothamza" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/hamza-bouktitiya-604471253/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="hud-bar">
+    <div class="hud-actions">
+      <button type="button" id="prev" aria-label="Précédent">← Préc.</button>
+      <button type="button" id="next" aria-label="Suivant">Suiv. →</button>
+      <button type="button" id="toggle-notes">Notes</button>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+    <div class="hud-actions">
+      <span id="counter">1 / 10</span>
+      <a class="lang-link" href="interview-en.html">EN</a>
+    </div>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll(".slide")];
+    const counter = document.getElementById("counter");
+    const bar = document.getElementById("bar");
+    let i = 0;
+    let notesOn = false;
+
+    function ensureNotes() {
+      slides.forEach((s) => {
+        let n = s.querySelector(".notes");
+        if (!n) {
+          n = document.createElement("p");
+          n.className = "notes hidden";
+          n.innerHTML = "<strong>Dire :</strong> " + (s.dataset.notes || "");
+          s.appendChild(n);
+        }
+        n.classList.toggle("hidden", !notesOn);
+      });
+    }
+
+    function show(n) {
+      i = Math.max(0, Math.min(slides.length - 1, n));
+      slides.forEach((s, idx) => s.classList.toggle("active", idx === i));
+      counter.textContent = (i + 1) + " / " + slides.length;
+      bar.style.width = ((i + 1) / slides.length * 100) + "%";
+      ensureNotes();
+    }
+
+    document.getElementById("prev").onclick = () => show(i - 1);
+    document.getElementById("next").onclick = () => show(i + 1);
+    document.getElementById("toggle-notes").onclick = () => {
+      notesOn = !notesOn;
+      ensureNotes();
+    };
+
+    document.addEventListener("keydown", (e) => {
+      if (["ArrowRight", "ArrowDown", " ", "PageDown"].includes(e.key)) {
+        e.preventDefault();
+        show(i + 1);
+      } else if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) {
+        e.preventDefault();
+        show(i - 1);
+      } else if (e.key === "n" || e.key === "N") {
+        notesOn = !notesOn;
+        ensureNotes();
+      } else if (e.key === "Home") show(0);
+      else if (e.key === "End") show(slides.length - 1);
+    });
+
+    show(0);
+  </script>
+</body>
+</html>
